@@ -55,7 +55,7 @@
 		design_thumbborder_padding="2"
 		design_thumbborder_bgroundedge="0"
 		design_text_css="color:#FFFFFF; font-family:Arial;"
-		design_text_shadow="1"
+		design_text_txtshadow="1 1 4 0x000000 1.0"
 	/>
 
 	<!--
@@ -69,9 +69,37 @@
 	<!-- <include url="skin/vtourskin_design_117round.xml"    /> -->
 	<!-- <include url="skin/vtourskin_design_black.xml"       /> -->
 
-	<scene name="scene_img_20250829_210831_00_629" title="IMG_20250829_210831_00_629" onstart=""
+	<!-- 自定义地图系统 -->
+	<layer name="map_container" keep="true" type="container" align="leftbottom" x="20" y="20" 
+		width="400" height="300" bgalpha="0.7" border="2,0xFFFFFF,0.8">
+		<!-- 加载您的地图图片 -->
+		<layer name="map_image" url="skin/xm_visitor.png" align="leftbottom" x="0" y="0" width="400"
+			height="300" scale="1.0" />
+
+		<!-- 添加位置标记 (使用krpano自带的红色圆点图标) -->
+		<layer name="map_spot" url="skin/vtourskin_mapspot.png" align="lefttop"
+			parent="map_container" x="0" y="0" visible="false" scale="0.5" />
+	</layer>
+
+	<events onnewpano="update_map_spot_position();" />
+	<action name="update_map_spot_position">
+		
+		if(scene[get(xml.scene)].map_x,
+
+			
+			set(layer[map_spot].x, get(scene[get(xml.scene)].map_x));
+			set(layer[map_spot].y, get(scene[get(xml.scene)].map_y));
+
+			set(layer[map_spot].visible, true);
+		,
+			set(layer[map_spot].visible, false);
+		);
+	</action>
+
+
+	<scene name="scene_img_20250829_210831_00_629" title="IMG_20250829_210831_00_629"
 		thumburl="panos/IMG_20250829_210831_00_629.tiles/thumb.jpg" lat="24.43944444"
-		lng="118.08813889" alt="19.60" heading="0.0">
+		lng="118.08813889" alt="19.60" heading="0.0" map_x="168" map_y="100">
 
 		<control bouncinglimits="calc:image.cube ? true : false" />
 
@@ -86,7 +114,8 @@
 		</image>
 
 		<hotspot name="spot1789889485" style="skin_hotspotstyle" ath="145.182" atv="27.045"
-			depth="1000.0" linkedscene="scene_img_20250829_210808_00_628" linkedscene_hoffset="0.0" use3dtransition="true" />
+			depth="1000.0" linkedscene="scene_img_20250829_210808_00_628" linkedscene_hoffset="0.0"
+			use3dtransition="true" />
 
 	</scene>
 
@@ -119,7 +148,8 @@
 
 		<control bouncinglimits="calc:image.cube ? true : false" />
 
-		<view hlookat="146.511" vlookat="8.774" fovtype="MFOV" fov="120.000" maxpixelzoom="2.0" fovmin="70"
+		<view hlookat="146.511" vlookat="8.774" fovtype="MFOV" fov="120.000" maxpixelzoom="2.0"
+			fovmin="70"
 			fovmax="140" limitview="auto" />
 
 		<preview url="panos/IMG_20250829_172737_00_326.tiles/preview.jpg" />
@@ -196,7 +226,8 @@
 
 		<control bouncinglimits="calc:image.cube ? true : false" />
 
-		<view hlookat="138.510" vlookat="11.940" fovtype="MFOV" fov="120.000" maxpixelzoom="2.0" fovmin="70"
+		<view hlookat="138.510" vlookat="11.940" fovtype="MFOV" fov="120.000" maxpixelzoom="2.0"
+			fovmin="70"
 			fovmax="140" limitview="auto" />
 
 		<preview url="panos/IMG_20250829_172737_00_329.tiles/preview.jpg" />
@@ -221,7 +252,8 @@
 
 		<control bouncinglimits="calc:image.cube ? true : false" />
 
-		<view hlookat="138.863" vlookat="15.014" fovtype="MFOV" fov="120.000" maxpixelzoom="2.0" fovmin="70"
+		<view hlookat="138.863" vlookat="15.014" fovtype="MFOV" fov="120.000" maxpixelzoom="2.0"
+			fovmin="70"
 			fovmax="140" limitview="auto" />
 
 		<preview url="panos/IMG_20250829_172737_00_330.tiles/preview.jpg" />
@@ -387,7 +419,7 @@
 
 		<image>
 			<cube url="panos/IMG_20250829_173851_00_348.tiles/%s/l%l/%v/l%l_%s_%v_%h.jpg"
-			multires="512,1024,2048" />
+				multires="512,1024,2048" />
 		</image>
 
 		<hotspot name="spot_prev" style="skin_hotspotstyle" ath="-93.239" atv="12"
@@ -1116,7 +1148,8 @@
 		</image>
 
 		<hotspot name="spot_prev" style="skin_hotspotstyle" ath="-155.158" atv="21.905"
-			linkedscene="scene_img_20250829_194354_00_484" linkedscene_hoffset="-34"  use3dtransition="true"/>
+			linkedscene="scene_img_20250829_194354_00_484" linkedscene_hoffset="-34"
+			use3dtransition="true" />
 		<hotspot name="spot_next" style="skin_hotspotstyle" ath="24.842" atv="15.525"
 			linkedscene="scene_img_20250829_194645_00_486" />
 
@@ -1143,7 +1176,7 @@
 			use3dtransition="true" />
 		<hotspot name="spot_next" style="skin_hotspotstyle" ath="34.576" atv="15.525"
 			linkedscene="scene_img_20250829_194833_00_487" linkedscene_hoffset="154.0"
-			use3dtransition="true"/>
+			use3dtransition="true" />
 
 	</scene>
 
@@ -1374,7 +1407,7 @@
 			linkedscene="scene_img_20250829_195225_00_494" linkedscene_hoffset="0.0"
 			use3dtransition="true" />
 		<hotspot name="spot_next" style="skin_hotspotstyle" ath="109.739" atv="14.777"
-			linkedscene="scene_img_20250829_195322_00_496"  />
+			linkedscene="scene_img_20250829_195322_00_496" />
 		<hotspot name="spot1791720616" style="skin_hotspotstyle" ath="-76.499" atv="18.323"
 			depth="1000.0" linkedscene="scene_img_20250829_195101_00_491" linkedscene_hoffset="0.0"
 			use3dtransition="true" />
@@ -1530,7 +1563,7 @@
 			linkedscene="scene_img_20250829_195922_00_500" linkedscene_hoffset="40.0"
 			use3dtransition="true" />
 		<hotspot name="spot_next" style="skin_hotspotstyle" ath="-67.534" atv="11.261"
-			linkedscene="scene_img_20250829_200014_00_502"  />
+			linkedscene="scene_img_20250829_200014_00_502" />
 
 	</scene>
 
@@ -1578,7 +1611,7 @@
 			linkedscene="scene_img_20250829_200014_00_502" linkedscene_hoffset="0.0"
 			use3dtransition="true" />
 		<hotspot name="spot_next" style="skin_hotspotstyle" ath="-138.637" atv="18.352"
-			linkedscene="scene_img_20250829_200106_00_504"  />
+			linkedscene="scene_img_20250829_200106_00_504" />
 
 	</scene>
 
@@ -1776,7 +1809,7 @@
 			linkedscene="scene_img_20250829_200505_00_512" linkedscene_hoffset="0.0"
 			use3dtransition="true" />
 		<hotspot name="spot1791739123" style="skin_hotspotstyle" ath="79.624" atv="16.701"
-			depth="1000.0" linkedscene="scene_img_20250829_205939_00_609"/>
+			depth="1000.0" linkedscene="scene_img_20250829_205939_00_609" />
 		<hotspot name="spot1791739502" style="skin_hotspotstyle" ath="-16.157" atv="10.844"
 			depth="1000.0" linkedscene="scene_img_20250829_200327_00_509" linkedscene_hoffset="0.0"
 			use3dtransition="true" />
@@ -1853,7 +1886,8 @@
 		</image>
 
 		<hotspot name="spot1791743206" style="skin_hotspotstyle" ath="141.628" atv="15.252"
-			depth="1000.0" linkedscene="scene_img_20250829_200525_00_513" linkedscene_hoffset="-138.0"
+			depth="1000.0" linkedscene="scene_img_20250829_200525_00_513"
+			linkedscene_hoffset="-138.0"
 			use3dtransition="true" />
 		<hotspot name="spot1791743365" style="skin_hotspotstyle" ath="-38.002" atv="10.32"
 			depth="1000.0" linkedscene="scene_img_20250829_200832_00_515" />
@@ -1929,7 +1963,7 @@
 			linkedscene="scene_img_20250829_200915_00_517" linkedscene_hoffset="0.0"
 			use3dtransition="true" />
 		<hotspot name="spot_next" style="skin_hotspotstyle" ath="-41.483" atv="14.29"
-			linkedscene="scene_img_20250829_201103_00_519"  />
+			linkedscene="scene_img_20250829_201103_00_519" />
 	</scene>
 
 	<scene name="scene_img_20250829_201103_00_519" title="IMG_20250829_201103_00_519" onstart=""
@@ -1947,7 +1981,7 @@
 			linkedscene="scene_img_20250829_201047_00_518" linkedscene_hoffset="0.0"
 			use3dtransition="true" />
 		<hotspot name="spot_next" style="skin_hotspotstyle" ath="-45.524" atv="16.113"
-			linkedscene="scene_img_20250829_201119_00_520"  />
+			linkedscene="scene_img_20250829_201119_00_520" />
 	</scene>
 
 	<scene name="scene_img_20250829_201119_00_520" title="IMG_20250829_201119_00_520" onstart=""
@@ -1965,7 +1999,7 @@
 			linkedscene="scene_img_20250829_201103_00_519" linkedscene_hoffset="0.0"
 			use3dtransition="true" />
 		<hotspot name="spot1791407185" style="skin_hotspotstyle" ath="-35.201" atv="25.261"
-			depth="1000.0" linkedscene="scene_img_20250829_201140_00_521"  />
+			depth="1000.0" linkedscene="scene_img_20250829_201140_00_521" />
 	</scene>
 
 	<scene name="scene_img_20250829_201140_00_521" title="IMG_20250829_201140_00_521" onstart=""
@@ -2924,7 +2958,7 @@
 			linkedscene="scene_img_20250829_202818_00_560" linkedscene_hoffset="0.0"
 			use3dtransition="true" />
 		<hotspot name="spot_next" style="skin_hotspotstyle" ath="-33.133" atv="21.509"
-			linkedscene="scene_img_20250829_203106_00_564"  />
+			linkedscene="scene_img_20250829_203106_00_564" />
 
 	</scene>
 
@@ -2973,7 +3007,7 @@
 			linkedscene="scene_img_20250829_203016_00_562" linkedscene_hoffset="0.0"
 			use3dtransition="true" />
 		<hotspot name="spot_next" style="skin_hotspotstyle" ath="38.944" atv="36.222"
-			linkedscene="scene_img_20250829_203106_00_564"  />
+			linkedscene="scene_img_20250829_203106_00_564" />
 		<hotspot name="spot1789971186" style="skin_hotspotstyle" ath="-148.459" atv="21.78"
 			depth="1000.0" linkedscene="scene_img_20250829_173851_00_364" linkedscene_hoffset="38.0"
 			use3dtransition="true" />
@@ -3003,7 +3037,7 @@
 			depth="1000.0" linkedscene="scene_img_20250829_203032_00_563" linkedscene_hoffset="0.0"
 			use3dtransition="true" />
 		<hotspot name="spot1789968944" style="skin_hotspotstyle" ath="-87.457" atv="29.994"
-			depth="1000.0" linkedscene="scene_img_20250829_203125_00_565"/>
+			depth="1000.0" linkedscene="scene_img_20250829_203125_00_565" />
 
 	</scene>
 
@@ -3047,9 +3081,11 @@
 		</image>
 
 		<hotspot name="spot_prev" style="skin_hotspotstyle" ath="135.44" atv="21.018"
-			linkedscene="scene_img_20250829_203125_00_565" linkedscene_hoffset="0.0" use3dtransition="true"/>
+			linkedscene="scene_img_20250829_203125_00_565" linkedscene_hoffset="0.0"
+			use3dtransition="true" />
 		<hotspot name="spot_next" style="skin_hotspotstyle" ath="-42.987" atv="15.531"
-			linkedscene="scene_img_20250829_203337_00_567" linkedscene_hoffset="0.0" use3dtransition="true"/>
+			linkedscene="scene_img_20250829_203337_00_567" linkedscene_hoffset="0.0"
+			use3dtransition="true" />
 
 	</scene>
 
@@ -3070,9 +3106,11 @@
 		</image>
 
 		<hotspot name="spot_prev" style="skin_hotspotstyle" ath="135.44" atv="21.018"
-			linkedscene="scene_img_20250829_203141_00_566" linkedscene_hoffset="0.0" use3dtransition="true"/>
+			linkedscene="scene_img_20250829_203141_00_566" linkedscene_hoffset="0.0"
+			use3dtransition="true" />
 		<hotspot name="spot_next" style="skin_hotspotstyle" ath="-42.987" atv="15.531"
-			linkedscene="scene_img_20250829_203409_00_568" linkedscene_hoffset="0.0" use3dtransition="true"/>
+			linkedscene="scene_img_20250829_203409_00_568" linkedscene_hoffset="0.0"
+			use3dtransition="true" />
 
 	</scene>
 
@@ -3093,9 +3131,11 @@
 		</image>
 
 		<hotspot name="spot_prev" style="skin_hotspotstyle" ath="135.44" atv="21.018"
-			linkedscene="scene_img_20250829_203337_00_567" linkedscene_hoffset="0.0" use3dtransition="true"/>
+			linkedscene="scene_img_20250829_203337_00_567" linkedscene_hoffset="0.0"
+			use3dtransition="true" />
 		<hotspot name="spot_next" style="skin_hotspotstyle" ath="-42.987" atv="15.531"
-			linkedscene="scene_img_20250829_203439_00_569" linkedscene_hoffset="0.0" use3dtransition="true"/>
+			linkedscene="scene_img_20250829_203439_00_569" linkedscene_hoffset="0.0"
+			use3dtransition="true" />
 
 	</scene>
 
@@ -3116,9 +3156,11 @@
 		</image>
 
 		<hotspot name="spot_prev" style="skin_hotspotstyle" ath="140.955" atv="17.125"
-			linkedscene="scene_img_20250829_203409_00_568" linkedscene_hoffset="0.0" use3dtransition="true"/>
+			linkedscene="scene_img_20250829_203409_00_568" linkedscene_hoffset="0.0"
+			use3dtransition="true" />
 		<hotspot name="spot_next" style="skin_hotspotstyle" ath="-36.901" atv="14.227"
-			linkedscene="scene_img_20250829_203457_00_570" linkedscene_hoffset="0.0" use3dtransition="true"/>
+			linkedscene="scene_img_20250829_203457_00_570" linkedscene_hoffset="0.0"
+			use3dtransition="true" />
 
 	</scene>
 
@@ -3139,9 +3181,11 @@
 		</image>
 
 		<hotspot name="spot_prev" style="skin_hotspotstyle" ath="141.585" atv="17.228"
-			linkedscene="scene_img_20250829_203439_00_569" linkedscene_hoffset="0.0" use3dtransition="true"/>
+			linkedscene="scene_img_20250829_203439_00_569" linkedscene_hoffset="0.0"
+			use3dtransition="true" />
 		<hotspot name="spot_next" style="skin_hotspotstyle" ath="-39.381" atv="14.831"
-			linkedscene="scene_img_20250829_203513_00_571" linkedscene_hoffset="0.0" use3dtransition="true"/>
+			linkedscene="scene_img_20250829_203513_00_571" linkedscene_hoffset="0.0"
+			use3dtransition="true" />
 
 	</scene>
 
@@ -3162,11 +3206,13 @@
 		</image>
 
 		<hotspot name="spot_prev" style="skin_hotspotstyle" ath="140.154" atv="13.289"
-			linkedscene="scene_img_20250829_203457_00_570" linkedscene_hoffset="0.0" use3dtransition="true"/>
+			linkedscene="scene_img_20250829_203457_00_570" linkedscene_hoffset="0.0"
+			use3dtransition="true" />
 		<hotspot name="spot_next" style="skin_hotspotstyle" ath="-40.401" atv="16.478"
-			linkedscene="scene_img_20250829_203529_00_572" linkedscene_hoffset="0.0" use3dtransition="true"/>
+			linkedscene="scene_img_20250829_203529_00_572" linkedscene_hoffset="0.0"
+			use3dtransition="true" />
 		<hotspot name="spot1789969357" style="skin_hotspotstyle" ath="-138.905" atv="21.088"
-			depth="1000.0" linkedscene="scene_img_20250829_174647_00_366"  />
+			depth="1000.0" linkedscene="scene_img_20250829_174647_00_366" />
 
 	</scene>
 
@@ -3187,9 +3233,11 @@
 		</image>
 
 		<hotspot name="spot_prev" style="skin_hotspotstyle" ath="138.098" atv="13.799"
-			linkedscene="scene_img_20250829_203513_00_571" linkedscene_hoffset="0.0" use3dtransition="true"/>
+			linkedscene="scene_img_20250829_203513_00_571" linkedscene_hoffset="0.0"
+			use3dtransition="true" />
 		<hotspot name="spot_next" style="skin_hotspotstyle" ath="-43.722" atv="11.085"
-			linkedscene="scene_img_20250829_203613_00_573" linkedscene_hoffset="0.0" use3dtransition="true"/>
+			linkedscene="scene_img_20250829_203613_00_573" linkedscene_hoffset="0.0"
+			use3dtransition="true" />
 
 	</scene>
 
@@ -3210,9 +3258,11 @@
 		</image>
 
 		<hotspot name="spot_prev" style="skin_hotspotstyle" ath="145.09" atv="11.902"
-			linkedscene="scene_img_20250829_203529_00_572" linkedscene_hoffset="0.0" use3dtransition="true"/>
+			linkedscene="scene_img_20250829_203529_00_572" linkedscene_hoffset="0.0"
+			use3dtransition="true" />
 		<hotspot name="spot_next" style="skin_hotspotstyle" ath="-35.401" atv="12.293"
-			linkedscene="scene_img_20250829_203628_00_574" linkedscene_hoffset="0.0" use3dtransition="true"/>
+			linkedscene="scene_img_20250829_203628_00_574" linkedscene_hoffset="0.0"
+			use3dtransition="true" />
 
 	</scene>
 
@@ -3233,9 +3283,11 @@
 		</image>
 
 		<hotspot name="spot_prev" style="skin_hotspotstyle" ath="152.021" atv="11.027"
-			linkedscene="scene_img_20250829_203613_00_573" linkedscene_hoffset="0.0" use3dtransition="true"/>
+			linkedscene="scene_img_20250829_203613_00_573" linkedscene_hoffset="0.0"
+			use3dtransition="true" />
 		<hotspot name="spot_next" style="skin_hotspotstyle" ath="-27.819" atv="10.096"
-			linkedscene="scene_img_20250829_203642_00_575" linkedscene_hoffset="0.0" use3dtransition="true"/>
+			linkedscene="scene_img_20250829_203642_00_575" linkedscene_hoffset="0.0"
+			use3dtransition="true" />
 
 	</scene>
 
@@ -3256,9 +3308,11 @@
 		</image>
 
 		<hotspot name="spot_prev" style="skin_hotspotstyle" ath="152.021" atv="11.027"
-			linkedscene="scene_img_20250829_203628_00_574" linkedscene_hoffset="0.0" use3dtransition="true"/>
+			linkedscene="scene_img_20250829_203628_00_574" linkedscene_hoffset="0.0"
+			use3dtransition="true" />
 		<hotspot name="spot_next" style="skin_hotspotstyle" ath="-27.819" atv="10.096"
-			linkedscene="scene_img_20250829_203705_00_577" linkedscene_hoffset="0.0" use3dtransition="true"/>
+			linkedscene="scene_img_20250829_203705_00_577" linkedscene_hoffset="0.0"
+			use3dtransition="true" />
 
 	</scene>
 
@@ -3279,9 +3333,11 @@
 		</image>
 
 		<hotspot name="spot_prev" style="skin_hotspotstyle" ath="152.021" atv="11.027"
-			linkedscene="scene_img_20250829_203642_00_575" linkedscene_hoffset="0.0" use3dtransition="true"/>
+			linkedscene="scene_img_20250829_203642_00_575" linkedscene_hoffset="0.0"
+			use3dtransition="true" />
 		<hotspot name="spot_next" style="skin_hotspotstyle" ath="-27.819" atv="10.096"
-			linkedscene="scene_img_20250829_203719_00_578" linkedscene_hoffset="0.0" use3dtransition="true"/>
+			linkedscene="scene_img_20250829_203719_00_578" linkedscene_hoffset="0.0"
+			use3dtransition="true" />
 
 	</scene>
 
@@ -3302,9 +3358,11 @@
 		</image>
 
 		<hotspot name="spot_prev" style="skin_hotspotstyle" ath="157.412" atv="11.528"
-			linkedscene="scene_img_20250829_203705_00_577" linkedscene_hoffset="0.0" use3dtransition="true"/>
+			linkedscene="scene_img_20250829_203705_00_577" linkedscene_hoffset="0.0"
+			use3dtransition="true" />
 		<hotspot name="spot_next" style="skin_hotspotstyle" ath="-22.194" atv="10.166"
-			linkedscene="scene_img_20250829_203834_00_579" linkedscene_hoffset="0.0" use3dtransition="true"/>
+			linkedscene="scene_img_20250829_203834_00_579" linkedscene_hoffset="0.0"
+			use3dtransition="true" />
 
 	</scene>
 
@@ -3325,9 +3383,11 @@
 		</image>
 
 		<hotspot name="spot_prev" style="skin_hotspotstyle" ath="159.648" atv="12.461"
-			linkedscene="scene_img_20250829_203719_00_578" linkedscene_hoffset="0.0" use3dtransition="true"/>
+			linkedscene="scene_img_20250829_203719_00_578" linkedscene_hoffset="0.0"
+			use3dtransition="true" />
 		<hotspot name="spot_next" style="skin_hotspotstyle" ath="-18.931" atv="9.536"
-			linkedscene="scene_img_20250829_203850_00_580" linkedscene_hoffset="0.0" use3dtransition="true"/>
+			linkedscene="scene_img_20250829_203850_00_580" linkedscene_hoffset="0.0"
+			use3dtransition="true" />
 
 	</scene>
 
@@ -3348,12 +3408,14 @@
 		</image>
 
 		<hotspot name="spot_prev" style="skin_hotspotstyle" ath="165.918" atv="13.658"
-			linkedscene="scene_img_20250829_203834_00_579" linkedscene_hoffset="0.0" use3dtransition="true"/>
+			linkedscene="scene_img_20250829_203834_00_579" linkedscene_hoffset="0.0"
+			use3dtransition="true" />
 		<hotspot name="spot_next" style="skin_hotspotstyle" ath="-15.888" atv="9.258"
-			linkedscene="scene_img_20250829_203926_00_581" linkedscene_hoffset="0.0" use3dtransition="true"/>
+			linkedscene="scene_img_20250829_203926_00_581" linkedscene_hoffset="0.0"
+			use3dtransition="true" />
 
 	</scene>
-	
+
 	<scene name="scene_img_20250829_203926_00_581" title="IMG_20250829_203926_00_581" onstart=""
 		thumburl="panos/IMG_20250829_203926_00_581.tiles/thumb.jpg" lat="24.43802778"
 		lng="118.09119444" alt="30.80" heading="0.0">
@@ -3371,7 +3433,8 @@
 		</image>
 
 		<hotspot name="spot_prev" style="skin_hotspotstyle" ath="152.917" atv="14.045"
-			linkedscene="scene_img_20250829_203850_00_580" linkedscene_hoffset="0.0" use3dtransition="true"/>
+			linkedscene="scene_img_20250829_203850_00_580" linkedscene_hoffset="0.0"
+			use3dtransition="true" />
 		<hotspot name="spot_next" style="skin_hotspotstyle" ath="-26.326" atv="16.13"
 			linkedscene="scene_img_20250829_203957_00_582" />
 
@@ -3395,7 +3458,7 @@
 
 		<hotspot name="spot_prev" style="skin_hotspotstyle" ath="154.104" atv="13.583"
 			linkedscene="scene_img_20250829_203926_00_581" linkedscene_hoffset="0.0"
-			use3dtransition="true"/>
+			use3dtransition="true" />
 		<hotspot name="spot1789856748" style="skin_hotspotstyle" ath="-28.678" atv="11.455"
 			depth="1000.0" linkedscene="scene_img_20250829_204030_00_583" linkedscene_hoffset="0.0"
 			use3dtransition="true" />
@@ -3421,7 +3484,9 @@
 		<hotspot name="spot1789856888" style="skin_hotspotstyle" ath="-6.164" atv="10.289"
 			depth="1000.0" linkedscene="scene_img_20250829_204055_00_584" linkedscene_hoffset="30.0"
 			use3dtransition="true" />
-		<hotspot name="spot1792436934" style="skin_hotspotstyle" ath="150.86" atv="16.32" depth="1000.0" linkedscene="scene_img_20250829_203957_00_582" linkedscene_hoffset="0.0" use3dtransition="true" />
+		<hotspot name="spot1792436934" style="skin_hotspotstyle" ath="150.86" atv="16.32"
+			depth="1000.0" linkedscene="scene_img_20250829_203957_00_582" linkedscene_hoffset="0.0"
+			use3dtransition="true" />
 
 	</scene>
 
@@ -3444,7 +3509,9 @@
 		<hotspot name="spot1789857028" style="skin_hotspotstyle" ath="9.977" atv="20.909"
 			depth="1000.0" linkedscene="scene_img_20250829_204130_00_585" linkedscene_hoffset="0.0"
 			use3dtransition="true" />
-		<hotspot name="spot1792437051" style="skin_hotspotstyle" ath="134.872" atv="15.059" depth="1000.0" linkedscene="scene_img_20250829_204030_00_583" linkedscene_hoffset="0.0" use3dtransition="true" />
+		<hotspot name="spot1792437051" style="skin_hotspotstyle" ath="134.872" atv="15.059"
+			depth="1000.0" linkedscene="scene_img_20250829_204030_00_583" linkedscene_hoffset="0.0"
+			use3dtransition="true" />
 
 	</scene>
 
@@ -3466,7 +3533,9 @@
 
 		<hotspot name="spot_next" style="skin_hotspotstyle" ath="-28.888" atv="13.973"
 			linkedscene="scene_img_20250829_204147_00_586" />
-		<hotspot name="spot1792438104" style="skin_hotspotstyle" ath="109.077" atv="12.939" depth="1000.0" linkedscene="scene_img_20250829_204055_00_584" linkedscene_hoffset="0.0" use3dtransition="true" />
+		<hotspot name="spot1792438104" style="skin_hotspotstyle" ath="109.077" atv="12.939"
+			depth="1000.0" linkedscene="scene_img_20250829_204055_00_584" linkedscene_hoffset="0.0"
+			use3dtransition="true" />
 
 	</scene>
 
@@ -3487,7 +3556,8 @@
 		</image>
 
 		<hotspot name="spot_prev" style="skin_hotspotstyle" ath="149.473" atv="21.093"
-			linkedscene="scene_img_20250829_204130_00_585" linkedscene_hoffset="0.0" use3dtransition="true"/>
+			linkedscene="scene_img_20250829_204130_00_585" linkedscene_hoffset="0.0"
+			use3dtransition="true" />
 		<hotspot name="spot_next" style="skin_hotspotstyle" ath="-35.051" atv="11.395"
 			linkedscene="scene_img_20250829_204415_00_587" />
 
@@ -3510,9 +3580,11 @@
 		</image>
 
 		<hotspot name="spot_prev" style="skin_hotspotstyle" ath="149.473" atv="21.093"
-			linkedscene="scene_img_20250829_204147_00_586" linkedscene_hoffset="0.0" use3dtransition="true"/>
+			linkedscene="scene_img_20250829_204147_00_586" linkedscene_hoffset="0.0"
+			use3dtransition="true" />
 		<hotspot name="spot_next" style="skin_hotspotstyle" ath="-35.051" atv="11.395"
-			linkedscene="scene_img_20250829_204453_00_588" linkedscene_hoffset="0.0" use3dtransition="true"/>
+			linkedscene="scene_img_20250829_204453_00_588" linkedscene_hoffset="0.0"
+			use3dtransition="true" />
 
 	</scene>
 
@@ -3533,9 +3605,11 @@
 		</image>
 
 		<hotspot name="spot_prev" style="skin_hotspotstyle" ath="138.033" atv="15.682"
-			linkedscene="scene_img_20250829_204415_00_587" linkedscene_hoffset="0.0" use3dtransition="true"/>
+			linkedscene="scene_img_20250829_204415_00_587" linkedscene_hoffset="0.0"
+			use3dtransition="true" />
 		<hotspot name="spot_next" style="skin_hotspotstyle" ath="-43.165" atv="11.295"
-			linkedscene="scene_img_20250829_204538_00_589" linkedscene_hoffset="0.0" use3dtransition="true"/>
+			linkedscene="scene_img_20250829_204538_00_589" linkedscene_hoffset="0.0"
+			use3dtransition="true" />
 
 	</scene>
 
@@ -3556,9 +3630,11 @@
 		</image>
 
 		<hotspot name="spot_prev" style="skin_hotspotstyle" ath="142.793" atv="18.272"
-			linkedscene="scene_img_20250829_204453_00_588" linkedscene_hoffset="0.0" use3dtransition="true"/>
+			linkedscene="scene_img_20250829_204453_00_588" linkedscene_hoffset="0.0"
+			use3dtransition="true" />
 		<hotspot name="spot_next" style="skin_hotspotstyle" ath="-39.109" atv="11.51"
-			linkedscene="scene_img_20250829_204622_00_590" linkedscene_hoffset="0.0" use3dtransition="true"/>
+			linkedscene="scene_img_20250829_204622_00_590" linkedscene_hoffset="0.0"
+			use3dtransition="true" />
 
 	</scene>
 
@@ -3579,9 +3655,11 @@
 		</image>
 
 		<hotspot name="spot_prev" style="skin_hotspotstyle" ath="149.473" atv="21.093"
-			linkedscene="scene_img_20250829_204538_00_589" linkedscene_hoffset="0.0" use3dtransition="true"/>
+			linkedscene="scene_img_20250829_204538_00_589" linkedscene_hoffset="0.0"
+			use3dtransition="true" />
 		<hotspot name="spot_next" style="skin_hotspotstyle" ath="-35.051" atv="11.395"
-			linkedscene="scene_img_20250829_204639_00_591" linkedscene_hoffset="0.0" use3dtransition="true"/>
+			linkedscene="scene_img_20250829_204639_00_591" linkedscene_hoffset="0.0"
+			use3dtransition="true" />
 
 	</scene>
 
@@ -3602,7 +3680,8 @@
 		</image>
 
 		<hotspot name="spot_prev" style="skin_hotspotstyle" ath="132.692" atv="14.159"
-			linkedscene="scene_img_20250829_204622_00_590" linkedscene_hoffset="0.0" use3dtransition="true"/>
+			linkedscene="scene_img_20250829_204622_00_590" linkedscene_hoffset="0.0"
+			use3dtransition="true" />
 		<hotspot name="spot_next" style="skin_hotspotstyle" ath="-47.546" atv="11.369"
 			linkedscene="scene_img_20250829_204706_00_592" />
 
@@ -3625,9 +3704,11 @@
 		</image>
 
 		<hotspot name="spot_prev" style="skin_hotspotstyle" ath="153.672" atv="17.063"
-			linkedscene="scene_img_20250829_204639_00_591" linkedscene_hoffset="0.0" use3dtransition="true"/>
+			linkedscene="scene_img_20250829_204639_00_591" linkedscene_hoffset="0.0"
+			use3dtransition="true" />
 		<hotspot name="spot_next" style="skin_hotspotstyle" ath="-26.844" atv="17.118"
-			linkedscene="scene_img_20250829_204724_00_593" linkedscene_hoffset="0.0" use3dtransition="true"/>
+			linkedscene="scene_img_20250829_204724_00_593" linkedscene_hoffset="0.0"
+			use3dtransition="true" />
 
 	</scene>
 
@@ -3648,9 +3729,11 @@
 		</image>
 
 		<hotspot name="spot_prev" style="skin_hotspotstyle" ath="149.8" atv="14.46"
-			linkedscene="scene_img_20250829_204706_00_592" linkedscene_hoffset="0.0" use3dtransition="true"/>
+			linkedscene="scene_img_20250829_204706_00_592" linkedscene_hoffset="0.0"
+			use3dtransition="true" />
 		<hotspot name="spot_next" style="skin_hotspotstyle" ath="-29.77" atv="15.133"
-			linkedscene="scene_img_20250829_204852_00_594" linkedscene_hoffset="0.0" use3dtransition="true"/>
+			linkedscene="scene_img_20250829_204852_00_594" linkedscene_hoffset="0.0"
+			use3dtransition="true" />
 
 	</scene>
 
@@ -3671,13 +3754,14 @@
 		</image>
 
 		<hotspot name="spot_prev" style="skin_hotspotstyle" ath="127.09" atv="13.466"
-			linkedscene="scene_img_20250829_204724_00_593" linkedscene_hoffset="0.0" use3dtransition="true"/>
+			linkedscene="scene_img_20250829_204724_00_593" linkedscene_hoffset="0.0"
+			use3dtransition="true" />
 		<hotspot name="spot1789859744" style="skin_hotspotstyle" ath="-53.514" atv="15.013"
 			depth="1000.0" linkedscene="scene_img_20250829_204907_00_595" linkedscene_hoffset="0.0"
 			use3dtransition="true" />
 
 	</scene>
-	
+
 	<scene name="scene_img_20250829_204907_00_595" title="IMG_20250829_204907_00_595" onstart=""
 		thumburl="panos/IMG_20250829_204907_00_595.tiles/thumb.jpg" lat="24.43802778"
 		lng="118.09119444" alt="30.80" heading="0.0">
@@ -3697,7 +3781,9 @@
 		<hotspot name="spot1789859874" style="skin_hotspotstyle" ath="-67.777" atv="26.031"
 			depth="1000.0" linkedscene="scene_img_20250829_204921_00_596" linkedscene_hoffset="0.0"
 			use3dtransition="true" />
-		<hotspot name="spot1792442691" style="skin_hotspotstyle" ath="143.538" atv="16.731" depth="1000.0" linkedscene="scene_img_20250829_204852_00_594" linkedscene_hoffset="0.0" use3dtransition="true" />
+		<hotspot name="spot1792442691" style="skin_hotspotstyle" ath="143.538" atv="16.731"
+			depth="1000.0" linkedscene="scene_img_20250829_204852_00_594" linkedscene_hoffset="0.0"
+			use3dtransition="true" />
 
 	</scene>
 
@@ -3718,7 +3804,8 @@
 		</image>
 
 		<hotspot name="spot_prev" style="skin_hotspotstyle" ath="137.901" atv="25.554"
-			linkedscene="scene_img_20250829_204907_00_595" linkedscene_hoffset="0.0" use3dtransition="true"/>
+			linkedscene="scene_img_20250829_204907_00_595" linkedscene_hoffset="0.0"
+			use3dtransition="true" />
 		<hotspot name="spot1789859972" style="skin_hotspotstyle" ath="-24.786" atv="24.057"
 			depth="1000.0" linkedscene="scene_img_20250829_204937_00_597" linkedscene_hoffset="0.0"
 			use3dtransition="true" />
@@ -3742,7 +3829,8 @@
 		</image>
 
 		<hotspot name="spot_prev" style="skin_hotspotstyle" ath="109.357" atv="27.026"
-			linkedscene="scene_img_20250829_204921_00_596" linkedscene_hoffset="0.0" use3dtransition="true"/>
+			linkedscene="scene_img_20250829_204921_00_596" linkedscene_hoffset="0.0"
+			use3dtransition="true" />
 		<hotspot name="spot1789860101" style="skin_hotspotstyle" ath="-48.968" atv="25.19"
 			depth="1000.0" linkedscene="scene_img_20250829_204956_00_598" linkedscene_hoffset="0.0"
 			use3dtransition="true" />
@@ -3766,12 +3854,14 @@
 		</image>
 
 		<hotspot name="spot_prev" style="skin_hotspotstyle" ath="131.032" atv="25.19"
-			linkedscene="scene_img_20250829_204937_00_597" linkedscene_hoffset="0.0" use3dtransition="true"/>
+			linkedscene="scene_img_20250829_204937_00_597" linkedscene_hoffset="0.0"
+			use3dtransition="true" />
 		<hotspot name="spot1789860201" style="skin_hotspotstyle" ath="-46.594" atv="24.708"
 			depth="1000.0" linkedscene="scene_img_20250829_205012_00_599" linkedscene_hoffset="0.0"
 			use3dtransition="true" />
 		<hotspot name="spot1791440017" style="skin_hotspotstyle" ath="-141.601" atv="29.291"
-			depth="1000.0" linkedscene="scene_img_20250829_205343_00_608" linkedscene_hoffset="160.0"
+			depth="1000.0" linkedscene="scene_img_20250829_205343_00_608"
+			linkedscene_hoffset="160.0"
 			use3dtransition="true" />
 
 	</scene>
@@ -3793,7 +3883,8 @@
 		</image>
 
 		<hotspot name="spot_prev" style="skin_hotspotstyle" ath="133.406" atv="24.708"
-			linkedscene="scene_img_20250829_204956_00_598" linkedscene_hoffset="0.0" use3dtransition="true"/>
+			linkedscene="scene_img_20250829_204956_00_598" linkedscene_hoffset="0.0"
+			use3dtransition="true" />
 		<hotspot name="spot1789860441" style="skin_hotspotstyle" ath="-39.684" atv="24.402"
 			depth="1000.0" linkedscene="scene_img_20250829_205027_00_600" linkedscene_hoffset="0.0"
 			use3dtransition="true" />
@@ -3817,7 +3908,8 @@
 		</image>
 
 		<hotspot name="spot_prev" style="skin_hotspotstyle" ath="140.316" atv="24.402"
-			linkedscene="scene_img_20250829_205012_00_599" linkedscene_hoffset="0.0" use3dtransition="true"/>
+			linkedscene="scene_img_20250829_205012_00_599" linkedscene_hoffset="0.0"
+			use3dtransition="true" />
 		<hotspot name="spot1789967777" style="skin_hotspotstyle" ath="-43.124" atv="26.991"
 			depth="1000.0" linkedscene="scene_img_20250829_205042_00_601" linkedscene_hoffset="0.0"
 			use3dtransition="true" />
@@ -3974,7 +4066,9 @@
 		<hotspot name="spot1789871225" style="skin_hotspotstyle" ath="-82.303" atv="20.756"
 			depth="1000.0" linkedscene="scene_img_20250829_205317_00_607" linkedscene_hoffset="0.0"
 			use3dtransition="true" />
-		<hotspot name="spot1792445141" style="skin_hotspotstyle" ath="115.128" atv="25.914" depth="1000.0" linkedscene="scene_img_20250829_205106_00_602" linkedscene_hoffset="0.0" use3dtransition="true" />
+		<hotspot name="spot1792445141" style="skin_hotspotstyle" ath="115.128" atv="25.914"
+			depth="1000.0" linkedscene="scene_img_20250829_205106_00_602" linkedscene_hoffset="0.0"
+			use3dtransition="true" />
 
 	</scene>
 
@@ -4023,7 +4117,7 @@
 			depth="1000.0" linkedscene="scene_img_20250829_205317_00_607" linkedscene_hoffset="0.0"
 			use3dtransition="true" />
 		<hotspot name="spot1789967426" style="skin_hotspotstyle" ath="-127.152" atv="27.929"
-			depth="1000.0" linkedscene="scene_img_20250829_204956_00_598"  />
+			depth="1000.0" linkedscene="scene_img_20250829_204956_00_598" />
 
 	</scene>
 
@@ -4069,7 +4163,7 @@
 
 		<hotspot name="spot_prev" style="skin_hotspotstyle" ath="133.995" atv="21.134"
 			linkedscene="scene_img_20250829_205939_00_609" linkedscene_hoffset="0.0"
-			use3dtransition="true"/>
+			use3dtransition="true" />
 		<hotspot name="spot_next" style="skin_hotspotstyle" ath="-45.484" atv="14.281"
 			linkedscene="scene_img_20250829_210016_00_611" />
 
@@ -4093,7 +4187,7 @@
 
 		<hotspot name="spot_prev" style="skin_hotspotstyle" ath="138.845" atv="15.64"
 			linkedscene="scene_img_20250829_205949_00_610" linkedscene_hoffset="0.0"
-			use3dtransition="true"/>
+			use3dtransition="true" />
 		<hotspot name="spot_next" style="skin_hotspotstyle" ath="-40.451" atv="14.161"
 			linkedscene="scene_img_20250829_210116_00_612" />
 
@@ -4117,9 +4211,9 @@
 
 		<hotspot name="spot_prev" style="skin_hotspotstyle" ath="144.992" atv="30.82"
 			linkedscene="scene_img_20250829_210016_00_611" linkedscene_hoffset="0.0"
-			use3dtransition="true"/>
+			use3dtransition="true" />
 		<hotspot name="spot1789884790" style="skin_hotspotstyle" ath="-35.008" atv="20.398"
-			depth="1000.0" linkedscene="scene_img_20250829_210131_00_613"  />
+			depth="1000.0" linkedscene="scene_img_20250829_210131_00_613" />
 
 	</scene>
 
@@ -4189,7 +4283,8 @@
 		</image>
 
 		<hotspot name="spot_prev" style="skin_hotspotstyle" ath="141.056" atv="16.819"
-			linkedscene="scene_img_20250829_210145_00_614" linkedscene_hoffset="0.0" use3dtransition="true" />
+			linkedscene="scene_img_20250829_210145_00_614" linkedscene_hoffset="0.0"
+			use3dtransition="true" />
 		<hotspot name="spot_next" style="skin_hotspotstyle" ath="-37.483" atv="15.428"
 			linkedscene="scene_img_20250829_210216_00_616" />
 
@@ -4212,7 +4307,8 @@
 		</image>
 
 		<hotspot name="spot_prev" style="skin_hotspotstyle" ath="123.965" atv="16.248"
-			linkedscene="scene_img_20250829_210200_00_615" linkedscene_hoffset="0.0" use3dtransition="true" />
+			linkedscene="scene_img_20250829_210200_00_615" linkedscene_hoffset="0.0"
+			use3dtransition="true" />
 		<hotspot name="spot_next" style="skin_hotspotstyle" ath="-57.053" atv="16.162"
 			linkedscene="scene_img_20250829_210243_00_617" />
 
@@ -4235,7 +4331,8 @@
 		</image>
 
 		<hotspot name="spot_prev" style="skin_hotspotstyle" ath="131.76" atv="14.623"
-			linkedscene="scene_img_20250829_210216_00_616" linkedscene_hoffset="0.0" use3dtransition="true" />
+			linkedscene="scene_img_20250829_210216_00_616" linkedscene_hoffset="0.0"
+			use3dtransition="true" />
 		<hotspot name="spot_next" style="skin_hotspotstyle" ath="-45.413" atv="13.893"
 			linkedscene="scene_img_20250829_210341_00_618" />
 
@@ -4258,7 +4355,8 @@
 		</image>
 
 		<hotspot name="spot_prev" style="skin_hotspotstyle" ath="139.873" atv="12.385"
-			linkedscene="scene_img_20250829_210243_00_617" linkedscene_hoffset="0.0" use3dtransition="true" />
+			linkedscene="scene_img_20250829_210243_00_617" linkedscene_hoffset="0.0"
+			use3dtransition="true" />
 		<hotspot name="spot_next" style="skin_hotspotstyle" ath="-38.015" atv="14.505"
 			linkedscene="scene_img_20250829_210438_00_619" />
 
@@ -4281,7 +4379,8 @@
 		</image>
 
 		<hotspot name="spot_prev" style="skin_hotspotstyle" ath="129.396" atv="13.5"
-			linkedscene="scene_img_20250829_210341_00_618" linkedscene_hoffset="0.0" use3dtransition="true" />
+			linkedscene="scene_img_20250829_210341_00_618" linkedscene_hoffset="0.0"
+			use3dtransition="true" />
 		<hotspot name="spot_next" style="skin_hotspotstyle" ath="-50.479" atv="11.119"
 			linkedscene="scene_img_20250829_210519_00_620" />
 
@@ -4304,7 +4403,8 @@
 		</image>
 
 		<hotspot name="spot_prev" style="skin_hotspotstyle" ath="125.676" atv="12.886"
-			linkedscene="scene_img_20250829_210438_00_619" linkedscene_hoffset="0.0" use3dtransition="true" />
+			linkedscene="scene_img_20250829_210438_00_619" linkedscene_hoffset="0.0"
+			use3dtransition="true" />
 		<hotspot name="spot_next" style="skin_hotspotstyle" ath="-54.469" atv="12.278"
 			linkedscene="scene_img_20250829_210535_00_621" />
 
@@ -4327,7 +4427,8 @@
 		</image>
 
 		<hotspot name="spot_prev" style="skin_hotspotstyle" ath="122.044" atv="12.253"
-			linkedscene="scene_img_20250829_210519_00_620" linkedscene_hoffset="0.0" use3dtransition="true" />
+			linkedscene="scene_img_20250829_210519_00_620" linkedscene_hoffset="0.0"
+			use3dtransition="true" />
 		<hotspot name="spot_next" style="skin_hotspotstyle" ath="-57.698" atv="12.029"
 			linkedscene="scene_img_20250829_210552_00_622" />
 
@@ -4350,7 +4451,8 @@
 		</image>
 
 		<hotspot name="spot_prev" style="skin_hotspotstyle" ath="114.813" atv="11.43"
-			linkedscene="scene_img_20250829_210535_00_621" linkedscene_hoffset="0.0" use3dtransition="true" />
+			linkedscene="scene_img_20250829_210535_00_621" linkedscene_hoffset="0.0"
+			use3dtransition="true" />
 		<hotspot name="spot_next" style="skin_hotspotstyle" ath="-60.652" atv="11.467"
 			linkedscene="scene_img_20250829_210609_00_623" />
 
@@ -4373,7 +4475,8 @@
 		</image>
 
 		<hotspot name="spot_prev" style="skin_hotspotstyle" ath="124.11" atv="30.82"
-			linkedscene="scene_img_20250829_210552_00_622" linkedscene_hoffset="0.0" use3dtransition="true" />
+			linkedscene="scene_img_20250829_210552_00_622" linkedscene_hoffset="0.0"
+			use3dtransition="true" />
 		<hotspot name="spot_next" style="skin_hotspotstyle" ath="-40.706" atv="30.831"
 			linkedscene="scene_img_20250829_210638_00_624" />
 
@@ -4396,7 +4499,8 @@
 		</image>
 
 		<hotspot name="spot_prev" style="skin_hotspotstyle" ath="117.404" atv="26.194"
-			linkedscene="scene_img_20250829_210609_00_623" linkedscene_hoffset="0.0" use3dtransition="true" />
+			linkedscene="scene_img_20250829_210609_00_623" linkedscene_hoffset="0.0"
+			use3dtransition="true" />
 		<hotspot name="spot_next" style="skin_hotspotstyle" ath="-31.89" atv="13.454"
 			linkedscene="scene_img_20250829_210700_00_625" />
 
@@ -4419,7 +4523,8 @@
 		</image>
 
 		<hotspot name="spot_prev" style="skin_hotspotstyle" ath="130.062" atv="21.843"
-			linkedscene="scene_img_20250829_210638_00_624" linkedscene_hoffset="0.0" use3dtransition="true" />
+			linkedscene="scene_img_20250829_210638_00_624" linkedscene_hoffset="0.0"
+			use3dtransition="true" />
 		<hotspot name="spot_next" style="skin_hotspotstyle" ath="-2.909" atv="24.147"
 			linkedscene="scene_img_20250829_210715_00_626" />
 
@@ -4442,7 +4547,8 @@
 		</image>
 
 		<hotspot name="spot_prev" style="skin_hotspotstyle" ath="80.106" atv="24.087"
-			linkedscene="scene_img_20250829_210700_00_625" linkedscene_hoffset="0.0" use3dtransition="true" />
+			linkedscene="scene_img_20250829_210700_00_625" linkedscene_hoffset="0.0"
+			use3dtransition="true" />
 		<hotspot name="spot_next" style="skin_hotspotstyle" ath="-49.192" atv="14.487"
 			linkedscene="scene_img_20250829_210744_00_627" />
 
@@ -4465,15 +4571,16 @@
 		</image>
 
 		<hotspot name="spot_prev" style="skin_hotspotstyle" ath="102.641" atv="31.15"
-			linkedscene="scene_img_20250829_210715_00_626" linkedscene_hoffset="0.0" use3dtransition="true" />
+			linkedscene="scene_img_20250829_210715_00_626" linkedscene_hoffset="0.0"
+			use3dtransition="true" />
 		<hotspot name="spot_next" style="skin_hotspotstyle" ath="-69.971" atv="7.861"
 			linkedscene="scene_img_20250829_210808_00_628" />
 
 	</scene>
 
-	<scene name="scene_img_20250829_210808_00_628" title="IMG_20250829_210808_00_628" onstart=""
+	<scene name="scene_img_20250829_210808_00_628" title="IMG_20250829_210808_00_628"
 		thumburl="panos/IMG_20250829_210808_00_628.tiles/thumb.jpg" lat="24.43916667"
-		lng="118.08825000" alt="55.50" heading="0.0">
+		lng="118.08825000" alt="55.50" heading="0.0" map_x="165" map_y="150">
 
 		<control bouncinglimits="calc:image.cube ? true : false" />
 
@@ -4488,9 +4595,10 @@
 		</image>
 
 		<hotspot name="spot_prev" style="skin_hotspotstyle" ath="132.028" atv="23.069"
-			linkedscene="scene_img_20250829_210744_00_627" linkedscene_hoffset="-4.0" use3dtransition="true" />
+			linkedscene="scene_img_20250829_210744_00_627" linkedscene_hoffset="-4.0"
+			use3dtransition="true" />
 		<hotspot name="spot1789889612" style="skin_hotspotstyle" ath="-54.979" atv="24.752"
-			depth="1000.0" linkedscene="scene_img_20250829_210831_00_629"  />
+			depth="1000.0" linkedscene="scene_img_20250829_210831_00_629" />
 
 	</scene>
 

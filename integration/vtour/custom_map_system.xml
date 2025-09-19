@@ -31,6 +31,13 @@
 			set(map_original_width, 400);  
 			set(map_original_height, 300);
 			
+			<!-- 确保容器尺寸已经设置 -->
+			if(layer[map_container].width LE 0, 
+				<!-- 如果容器尺寸还没设置，使用默认值 -->
+				set(layer[map_container].width, 400);
+				set(layer[map_container].height, 300);
+			);
+			
 			<!-- 计算坐标缩放比例 -->
 			calc(scale_x, layer[map_container].width / map_original_width);
 			calc(scale_y, layer[map_container].height / map_original_height);
@@ -59,33 +66,56 @@
 			<!-- 显示位置标记 -->
 			set(layer[map_spot].visible, true);
 			
-			<!-- 调试信息（可选，用于调试坐标） -->
-			<!-- trace('Map coordinates: ', scene[get(xml.scene)].map_x, ', ', scene[get(xml.scene)].map_y); -->
-			<!-- trace('Calculated position: ', final_x, ', ', final_y); -->
+			<!-- 调试信息（启用以查看计算过程） -->
+			trace('Container size: ', layer[map_container].width, 'x', layer[map_container].height);
+			trace('Map coordinates: ', scene[get(xml.scene)].map_x, ', ', scene[get(xml.scene)].map_y);
+			trace('Scale factors: ', scale_x, ', ', scale_y);
+			trace('Calculated position: ', final_x, ', ', final_y);
 		,
 			<!-- 如果没有地图坐标数据，隐藏位置标记 -->
 			set(layer[map_spot].visible, false);
 		);
 	</action>
 	
-	<!-- 初始化地图状态 -->
-	<action name="init_map_state">
+	<!-- 场景加载时的地图初始化 -->
+	<action name="init_map_on_scene_load">
+		<!-- 首次初始化地图状态 -->
 		if(calc(!map_initialized),
-			<!-- 首次初始化，确保地图处于展开状态 -->
 			set(map_expanded, true);
 			set(map_initialized, true);
-			update_map_responsive_layout();
 			set(layer[map_image].visible, true);
-			if(scene[get(xml.scene)].map_x, set(layer[map_spot].visible, true));
 			set(layer[map_toggle_button].url, 'skin/ico_street_map_down.png');
+		);
+		
+		<!-- 设置响应式布局 -->
+		update_map_responsive_layout();
+		
+		<!-- 延迟更新位置标记，确保布局完成 -->
+		delayedcall(0.3, update_map_spot_with_visibility());
+	</action>
+
+	<!-- 窗口大小改变时的地图调整 -->
+	<action name="resize_map_layout">
+		<!-- 只有在地图已初始化时才调整 -->
+		if(map_initialized,
+			update_map_responsive_layout();
+			<!-- 短延迟后更新位置标记 -->
+			delayedcall(0.1, update_map_spot_with_visibility());
+		);
+	</action>
+
+	<!-- 更新位置标记并控制可见性 -->
+	<action name="update_map_spot_with_visibility">
+		if(scene[get(xml.scene)].map_x AND map_expanded,
+			update_map_spot_position();
+			set(layer[map_spot].visible, true);
+		,
+			set(layer[map_spot].visible, false);
 		);
 	</action>
 
 	<!-- 切换地图可见性 -->
 	<action name="toggle_map_visibility">
-		<!-- 确保已初始化 -->
-		init_map_state();
-		
 		<!-- 切换状态 -->
 		set(map_expanded, calc(!map_expanded));
 		
@@ -93,8 +123,9 @@
 			<!-- 展开 -->
 			update_map_responsive_layout();
 			set(layer[map_image].visible, true);
-			if(scene[get(xml.scene)].map_x, set(layer[map_spot].visible, true));
 			set(layer[map_toggle_button].url, 'skin/ico_street_map_down.png');
+			<!-- 延迟更新位置标记 -->
+			delayedcall(0.1, update_map_spot_with_visibility());
 		,
 			<!-- 收起 -->
 			tween(layer[map_container].width, 30, 0.5);
@@ -157,11 +188,12 @@
 			set(layer[map_image].width, get(layer[map_container].width));
 			set(layer[map_image].height, get(layer[map_container].height));
 		);
+		
+		<!-- 只有在已经初始化后才重新计算位置标记位置 -->
+		if(map_initialized,
+			<!-- 延迟一点时间确保布局完全应用 -->
+			delayedcall(0.05, update_map_spot_position());
 		);
-		);
-
-		<!-- 重新计算位置标记位置 -->
-		update_map_spot_position();
 	</action>
 
 </krpano>

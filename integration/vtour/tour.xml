@@ -72,8 +72,11 @@
 	<!-- 自定义地图系统 -->
 	<include url="custom_map_system.xml" />
 	
-	<!-- 响应式布局事件监听 -->
-	<events onnewpano="init_map_state();update_map_spot_position();update_map_responsive_layout();" onresize="update_map_responsive_layout();set(layer[skin_control_bar].visible, false); set(layer[skin_splitter_bottom].visible, false);" />
+	<!-- 优化后的事件监听器 -->
+	<events 
+		onnewpano="init_map_on_scene_load();" 
+		onresize="resize_map_layout();set(layer[skin_control_bar].visible, false); set(layer[skin_splitter_bottom].visible, false);" 
+	/>
 
 	<scene name="scene_img_20250829_210831_00_629" title="IMG_20250829_210831_00_629"
 		thumburl="panos/IMG_20250829_210831_00_629.tiles/thumb.jpg" lat="24.43944444"

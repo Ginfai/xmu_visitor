@@ -536,10 +536,10 @@
 				multires="512,1024,2048" />
 		</image>
 
-		<hotspot name="spot_prev" style="skin_hotspotstyle" ath="-90.928" atv="13.035"
-			linkedscene="scene_img_20250829_173851_00_348" linkedscene_hoffset="0.0"
+		<hotspot name="spot_prev" style="skin_hotspotstyle" ath="-102.017" atv="12"
+			linkedscene="scene_IMG_20250829_173851_00_348" linkedscene_hoffset="0.0"
 			use3dtransition="true" />
-		<hotspot name="spot_next" style="skin_hotspotstyle" ath="70.0" atv="12.0"
+		<hotspot name="spot_next" style="skin_hotspotstyle" ath="70.0" atv="12"
 			linkedscene="scene_img_20250829_173851_00_350" />
 
 	</scene>
@@ -941,7 +941,7 @@
 
 	<scene name="scene_img_20250829_174647_00_366" title="IMG_20250829_174647_00_366" onstart=""
 		thumburl="panos/IMG_20250829_174647_00_366.tiles/thumb.jpg" lat="24.43822222"
-		lng="118.09105556" alt="12.10" heading="0.0" map_x="331" map_y="117">
+		lng="118.09105556" alt="12.10" heading="0.0">
 
 		<control bouncinglimits="calc:image.cube ? true : false" />
 
@@ -967,7 +967,7 @@
 
 	<scene name="scene_img_20250829_174702_00_367" title="IMG_20250829_174702_00_367" onstart=""
 		thumburl="panos/IMG_20250829_174702_00_367.tiles/thumb.jpg" lat="24.43822222"
-		lng="118.09105556" alt="12.10" heading="0.0" map_x="333" map_y="117">
+		lng="118.09105556" alt="12.10" heading="0.0">
 
 		<control bouncinglimits="calc:image.cube ? true : false" />
 
@@ -992,7 +992,7 @@
 
 	<scene name="scene_img_20250829_174719_00_368" title="IMG_20250829_174719_00_368" onstart=""
 		thumburl="panos/IMG_20250829_174719_00_368.tiles/thumb.jpg" lat="24.43822222"
-		lng="118.09105556" alt="12.10" heading="0.0" map_x="335" map_y="117">
+		lng="118.09105556" alt="12.10" heading="0.0">
 
 		<control bouncinglimits="calc:image.cube ? true : false" />
 
@@ -1017,7 +1017,7 @@
 
 	<scene name="scene_img_20250829_174737_00_369" title="IMG_20250829_174737_00_369" onstart=""
 		thumburl="panos/IMG_20250829_174737_00_369.tiles/thumb.jpg" lat="24.43780556"
-		lng="118.09086111" alt="27.30" heading="0.0" map_x="337" map_y="117">
+		lng="118.09086111" alt="27.30" heading="0.0">
 
 		<control bouncinglimits="calc:image.cube ? true : false" />
 
@@ -1115,7 +1115,7 @@
 
 	<scene name="scene_img_20250829_194216_00_481" title="IMG_20250829_194216_00_481" onstart=""
 		thumburl="panos/IMG_20250829_194216_00_481.tiles/thumb.jpg" lat="24.43761111"
-		lng="118.08944444" alt="15.10" heading="0.0" map_x="204" map_y="224">
+		lng="118.08944444" alt="15.10" heading="0.0">
 
 		<control bouncinglimits="calc:image.cube ? true : false" />
 
@@ -1144,7 +1144,7 @@
 
 	<scene name="scene_img_20250829_194245_00_482" title="IMG_20250829_194245_00_482" onstart=""
 		thumburl="panos/IMG_20250829_194245_00_482.tiles/thumb.jpg" lat="24.43780556"
-		lng="118.08925000" alt="24.60" heading="0.0" map_x="193" map_y="224">
+		lng="118.08925000" alt="24.60" heading="0.0">
 
 		<control bouncinglimits="calc:image.cube ? true : false" />
 
@@ -1170,7 +1170,7 @@
 
 	<scene name="scene_img_20250829_194336_00_483" title="IMG_20250829_194336_00_483" onstart=""
 		thumburl="panos/IMG_20250829_194336_00_483.tiles/thumb.jpg" lat="24.43780556"
-		lng="118.08925000" alt="24.60" heading="0.0" map_x="187.2" map_y="224">
+		lng="118.08925000" alt="24.60" heading="0.0">
 
 		<control bouncinglimits="calc:image.cube ? true : false" />
 
@@ -1196,7 +1196,7 @@
 
 	<scene name="scene_img_20250829_194354_00_484" title="IMG_20250829_194354_00_484" onstart=""
 		thumburl="panos/IMG_20250829_194354_00_484.tiles/thumb.jpg" lat="24.43780556"
-		lng="118.08925000" alt="24.60" heading="0.0" map_x="181.4" map_y="224">
+		lng="118.08925000" alt="24.60" heading="0.0">
 
 		<control bouncinglimits="calc:image.cube ? true : false" />
 
@@ -1221,7 +1221,7 @@
 
 	<scene name="scene_img_20250829_194601_00_485" title="IMG_20250829_194601_00_485" onstart=""
 		thumburl="panos/IMG_20250829_194601_00_485.tiles/thumb.jpg" lat="24.43780556"
-		lng="118.08925000" alt="24.60" heading="0.0" map_x="175.6" map_y="224">
+		lng="118.08925000" alt="24.60" heading="0.0">
 
 		<control bouncinglimits="calc:image.cube ? true : false" />
 
@@ -1246,7 +1246,7 @@
 
 	<scene name="scene_img_20250829_194645_00_486" title="IMG_20250829_194645_00_486" onstart=""
 		thumburl="panos/IMG_20250829_194645_00_486.tiles/thumb.jpg" lat="24.43780556"
-		lng="118.08925000" alt="24.60" heading="0.0" map_x="169.8" map_y="224">
+		lng="118.08925000" alt="24.60" heading="0.0">
 
 		<control bouncinglimits="calc:image.cube ? true : false" />
 
@@ -1271,7 +1271,7 @@
 
 	<scene name="scene_img_20250829_194833_00_487" title="IMG_20250829_194833_00_487" onstart=""
 		thumburl="panos/IMG_20250829_194833_00_487.tiles/thumb.jpg" lat="24.43780556"
-		lng="118.08925000" alt="24.60" heading="0.0" map_x="164.0" map_y="224">
+		lng="118.08925000" alt="24.60" heading="0.0">
 
 		<control bouncinglimits="calc:image.cube ? true : false" />
 
@@ -1296,7 +1296,7 @@
 
 	<scene name="scene_img_20250829_195001_00_488" title="IMG_20250829_195001_00_488" onstart=""
 		thumburl="panos/IMG_20250829_195001_00_488.tiles/thumb.jpg" lat="24.43780556"
-		lng="118.08925000" alt="24.60" heading="0.0" map_x="158.2" map_y="224">
+		lng="118.08925000" alt="24.60" heading="0.0">
 
 		<control bouncinglimits="calc:image.cube ? true : false" />
 
@@ -1321,7 +1321,7 @@
 
 	<scene name="scene_img_20250829_195018_00_489" title="IMG_20250829_195018_00_489" onstart=""
 		thumburl="panos/IMG_20250829_195018_00_489.tiles/thumb.jpg" lat="24.43780556"
-		lng="118.08925000" alt="24.60" heading="0.0" map_x="152.4" map_y="224">
+		lng="118.08925000" alt="24.60" heading="0.0">
 
 		<control bouncinglimits="calc:image.cube ? true : false" />
 
@@ -1346,7 +1346,7 @@
 
 	<scene name="scene_img_20250829_195043_00_490" title="IMG_20250829_195043_00_490" onstart=""
 		thumburl="panos/IMG_20250829_195043_00_490.tiles/thumb.jpg" lat="24.43780556"
-		lng="118.08925000" alt="24.60" heading="0.0" map_x="146.6" map_y="224">
+		lng="118.08925000" alt="24.60" heading="0.0">
 
 		<control bouncinglimits="calc:image.cube ? true : false" />
 
@@ -1371,7 +1371,7 @@
 
 	<scene name="scene_img_20250829_195101_00_491" title="IMG_20250829_195101_00_491" onstart=""
 		thumburl="panos/IMG_20250829_195101_00_491.tiles/thumb.jpg" lat="24.43780556"
-		lng="118.08925000" alt="24.60" heading="0.0" map_x="140.8" map_y="224">
+		lng="118.08925000" alt="24.60" heading="0.0">
 
 		<control bouncinglimits="calc:image.cube ? true : false" />
 
@@ -1399,7 +1399,7 @@
 
 	<scene name="scene_img_20250829_195147_00_492" title="IMG_20250829_195147_00_492" onstart=""
 		thumburl="panos/IMG_20250829_195147_00_492.tiles/thumb.jpg" lat="24.43780556"
-		lng="118.08925000" alt="24.60" heading="0.0" map_x="135.0" map_y="224">
+		lng="118.08925000" alt="24.60" heading="0.0">
 
 		<control bouncinglimits="calc:image.cube ? true : false" />
 
@@ -1424,7 +1424,7 @@
 
 	<scene name="scene_img_20250829_195204_00_493" title="IMG_20250829_195204_00_493" onstart=""
 		thumburl="panos/IMG_20250829_195204_00_493.tiles/thumb.jpg" lat="24.43780556"
-		lng="118.08925000" alt="24.60" heading="0.0" map_x="129.2" map_y="224">
+		lng="118.08925000" alt="24.60" heading="0.0">
 
 		<control bouncinglimits="calc:image.cube ? true : false" />
 
@@ -1449,7 +1449,7 @@
 
 	<scene name="scene_img_20250829_195225_00_494" title="IMG_20250829_195225_00_494" onstart=""
 		thumburl="panos/IMG_20250829_195225_00_494.tiles/thumb.jpg" lat="24.43780556"
-		lng="118.08925000" alt="24.60" heading="0.0" map_x="129" map_y="216">
+		lng="118.08925000" alt="24.60" heading="0.0">
 
 		<control bouncinglimits="calc:image.cube ? true : false" />
 
@@ -1477,7 +1477,7 @@
 
 	<scene name="scene_img_20250829_195251_00_495" title="IMG_20250829_195251_00_495" onstart=""
 		thumburl="panos/IMG_20250829_195251_00_495.tiles/thumb.jpg" lat="24.43780556"
-		lng="118.08925000" alt="24.60" heading="0.0" map_x="136" map_y="216">
+		lng="118.08925000" alt="24.60" heading="0.0">
 
 		<control bouncinglimits="calc:image.cube ? true : false" />
 
@@ -1506,7 +1506,7 @@
 
 	<scene name="scene_img_20250829_195322_00_496" title="IMG_20250829_195322_00_496" onstart=""
 		thumburl="panos/IMG_20250829_195322_00_496.tiles/thumb.jpg" lat="24.43780556"
-		lng="118.08925000" alt="24.60" heading="0.0" map_x="129" map_y="210">
+		lng="118.08925000" alt="24.60" heading="0.0">
 
 		<control bouncinglimits="calc:image.cube ? true : false" />
 
@@ -1535,7 +1535,7 @@
 
 	<scene name="scene_img_20250829_195805_00_497" title="IMG_20250829_195805_00_497" onstart=""
 		thumburl="panos/IMG_20250829_195805_00_497.tiles/thumb.jpg" lat="24.43780556"
-		lng="118.08925000" alt="24.60" heading="0.0" map_x="129" map_y="203.7">
+		lng="118.08925000" alt="24.60" heading="0.0">
 
 		<control bouncinglimits="calc:image.cube ? true : false" />
 
@@ -1560,7 +1560,7 @@
 
 	<scene name="scene_img_20250829_195848_00_498" title="IMG_20250829_195848_00_498" onstart=""
 		thumburl="panos/IMG_20250829_195848_00_498.tiles/thumb.jpg" lat="24.43780556"
-		lng="118.08925000" alt="24.60" heading="0.0" map_x="129" map_y="197.4">
+		lng="118.08925000" alt="24.60" heading="0.0">
 
 		<control bouncinglimits="calc:image.cube ? true : false" />
 
@@ -1585,7 +1585,7 @@
 
 	<scene name="scene_img_20250829_195906_00_499" title="IMG_20250829_195906_00_499" onstart=""
 		thumburl="panos/IMG_20250829_195906_00_499.tiles/thumb.jpg" lat="24.43780556"
-		lng="118.08925000" alt="24.60" heading="0.0" map_x="129" map_y="191.1">
+		lng="118.08925000" alt="24.60" heading="0.0">
 
 		<control bouncinglimits="calc:image.cube ? true : false" />
 
@@ -1610,7 +1610,7 @@
 
 	<scene name="scene_img_20250829_195922_00_500" title="IMG_20250829_195922_00_500" onstart=""
 		thumburl="panos/IMG_20250829_195922_00_500.tiles/thumb.jpg" lat="24.43780556"
-		lng="118.08925000" alt="24.60" heading="0.0" map_x="129" map_y="184.8">
+		lng="118.08925000" alt="24.60" heading="0.0">
 
 		<control bouncinglimits="calc:image.cube ? true : false" />
 
@@ -1634,7 +1634,7 @@
 
 	<scene name="scene_img_20250829_195941_00_501" title="IMG_20250829_195941_00_501" onstart=""
 		thumburl="panos/IMG_20250829_195941_00_501.tiles/thumb.jpg" lat="24.43780556"
-		lng="118.08925000" alt="24.60" heading="0.0" map_x="129" map_y="178.5">
+		lng="118.08925000" alt="24.60" heading="0.0">
 
 		<control bouncinglimits="calc:image.cube ? true : false" />
 
@@ -1658,7 +1658,7 @@
 
 	<scene name="scene_img_20250829_200014_00_502" title="IMG_20250829_200014_00_502" onstart=""
 		thumburl="panos/IMG_20250829_200014_00_502.tiles/thumb.jpg" lat="24.43780556"
-		lng="118.08925000" alt="24.60" heading="0.0" map_x="129" map_y="172.2">
+		lng="118.08925000" alt="24.60" heading="0.0">
 
 		<control bouncinglimits="calc:image.cube ? true : false" />
 
@@ -1682,7 +1682,7 @@
 
 	<scene name="scene_img_20250829_200030_00_503" title="IMG_20250829_200030_00_503" onstart=""
 		thumburl="panos/IMG_20250829_200030_00_503.tiles/thumb.jpg" lat="24.43780556"
-		lng="118.08925000" alt="24.60" heading="0.0" map_x="129" map_y="165.9">
+		lng="118.08925000" alt="24.60" heading="0.0">
 
 		<control bouncinglimits="calc:image.cube ? true : false" />
 
@@ -1706,7 +1706,7 @@
 
 	<scene name="scene_img_20250829_200106_00_504" title="IMG_20250829_200106_00_504" onstart=""
 		thumburl="panos/IMG_20250829_200106_00_504.tiles/thumb.jpg" lat="24.43780556"
-		lng="118.08925000" alt="24.60" heading="0.0" map_x="129" map_y="159.6">
+		lng="118.08925000" alt="24.60" heading="0.0">
 
 		<control bouncinglimits="calc:image.cube ? true : false" />
 
@@ -1730,7 +1730,7 @@
 
 	<scene name="scene_img_20250829_200152_00_505" title="IMG_20250829_200152_00_505" onstart=""
 		thumburl="panos/IMG_20250829_200152_00_505.tiles/thumb.jpg" lat="24.43780556"
-		lng="118.08925000" alt="24.60" heading="0.0" map_x="129" map_y="153.3">
+		lng="118.08925000" alt="24.60" heading="0.0">
 
 		<control bouncinglimits="calc:image.cube ? true : false" />
 
@@ -1755,7 +1755,7 @@
 
 	<scene name="scene_img_20250829_200210_00_506" title="IMG_20250829_200210_00_506" onstart=""
 		thumburl="panos/IMG_20250829_200210_00_506.tiles/thumb.jpg" lat="24.43780556"
-		lng="118.08925000" alt="24.60" heading="0.0" map_x="129" map_y="147.0">
+		lng="118.08925000" alt="24.60" heading="0.0">
 
 		<control bouncinglimits="calc:image.cube ? true : false" />
 
@@ -1780,7 +1780,7 @@
 
 	<scene name="scene_img_20250829_200249_00_507" title="IMG_20250829_200249_00_507" onstart=""
 		thumburl="panos/IMG_20250829_200249_00_507.tiles/thumb.jpg" lat="24.43780556"
-		lng="118.08925000" alt="24.60" heading="0.0" map_x="129" map_y="140.7">
+		lng="118.08925000" alt="24.60" heading="0.0">
 
 		<control bouncinglimits="calc:image.cube ? true : false" />
 
@@ -1805,7 +1805,7 @@
 
 	<scene name="scene_img_20250829_200259_00_508" title="IMG_20250829_200259_00_508" onstart=""
 		thumburl="panos/IMG_20250829_200259_00_508.tiles/thumb.jpg" lat="24.43780556"
-		lng="118.08925000" alt="24.60" heading="0.0" map_x="129" map_y="134.4">
+		lng="118.08925000" alt="24.60" heading="0.0">
 
 		<control bouncinglimits="calc:image.cube ? true : false" />
 
@@ -1830,7 +1830,7 @@
 
 	<scene name="scene_img_20250829_200327_00_509" title="IMG_20250829_200327_00_509" onstart=""
 		thumburl="panos/IMG_20250829_200327_00_509.tiles/thumb.jpg" lat="24.43780556"
-		lng="118.08925000" alt="24.60" heading="0.0" map_x="129" map_y="128.1">
+		lng="118.08925000" alt="24.60" heading="0.0">
 
 		<control bouncinglimits="calc:image.cube ? true : false" />
 
@@ -1855,7 +1855,7 @@
 
 	<scene name="scene_img_20250829_200350_00_510" title="IMG_20250829_200350_00_510" onstart=""
 		thumburl="panos/IMG_20250829_200350_00_510.tiles/thumb.jpg" lat="24.43780556"
-		lng="118.08925000" alt="24.60" heading="0.0" map_x="129" map_y="121.8">
+		lng="118.08925000" alt="24.60" heading="0.0">
 
 		<control bouncinglimits="calc:image.cube ? true : false" />
 
@@ -1880,7 +1880,7 @@
 
 	<scene name="scene_img_20250829_200418_00_511" title="IMG_20250829_200418_00_511" onstart=""
 		thumburl="panos/IMG_20250829_200418_00_511.tiles/thumb.jpg" lat="24.43780556"
-		lng="118.08925000" alt="24.60" heading="0.0" map_x="129" map_y="111">
+		lng="118.08925000" alt="24.60" heading="0.0">
 
 		<control bouncinglimits="calc:image.cube ? true : false" />
 
@@ -1907,7 +1907,7 @@
 
 	<scene name="scene_img_20250829_200505_00_512" title="IMG_20250829_200505_00_512" onstart=""
 		thumburl="panos/IMG_20250829_200505_00_512.tiles/thumb.jpg" lat="24.43780556"
-		lng="118.08925000" alt="24.60" heading="0.0" map_x="129" map_y="105">
+		lng="118.08925000" alt="24.60" heading="0.0">
 
 		<control bouncinglimits="true" />
 
@@ -1933,7 +1933,7 @@
 
 	<scene name="scene_img_20250829_200525_00_513" title="IMG_20250829_200525_00_513" onstart=""
 		thumburl="panos/IMG_20250829_200525_00_513.tiles/thumb.jpg" lat="24.43780556"
-		lng="118.08925000" alt="24.60" heading="0.0" map_x="129" map_y="99">
+		lng="118.08925000" alt="24.60" heading="0.0">
 
 		<control bouncinglimits="true" />
 
@@ -1960,7 +1960,7 @@
 
 	<scene name="scene_img_20250829_200632_00_514" title="IMG_20250829_200632_00_514" onstart=""
 		thumburl="panos/IMG_20250829_200632_00_514.tiles/thumb.jpg" lat="24.43780556"
-		lng="118.08925000" alt="24.60" heading="0.0" map_x="129" map_y="93">
+		lng="118.08925000" alt="24.60" heading="0.0">
 
 		<control bouncinglimits="calc:image.cube ? true : false" />
 
@@ -1985,7 +1985,7 @@
 
 	<scene name="scene_img_20250829_200832_00_515" title="IMG_20250829_200832_00_515" onstart=""
 		thumburl="panos/IMG_20250829_200832_00_515.tiles/thumb.jpg" lat="24.43780556"
-		lng="118.08925000" alt="24.60" heading="0.0" map_x="129" map_y="87">
+		lng="118.08925000" alt="24.60" heading="0.0">
 		<control bouncinglimits="calc:image.cube ? true : false" />
 		<view hlookat="-54.399" vlookat="1.163" fovtype="MFOV" fov="120.000" maxpixelzoom="2.0"
 			fovmin="70" fovmax="140" limitview="auto" />
@@ -2003,7 +2003,7 @@
 	</scene>
 	<scene name="scene_img_20250829_200859_00_516" title="IMG_20250829_200859_00_516" onstart=""
 		thumburl="panos/IMG_20250829_200859_00_516.tiles/thumb.jpg" lat="24.43780556"
-		lng="118.08925000" alt="24.60" heading="0.0" map_x="129" map_y="81">
+		lng="118.08925000" alt="24.60" heading="0.0">
 		<control bouncinglimits="calc:image.cube ? true : false" />
 		<view hlookat="-43.748" vlookat="2.583" fovtype="MFOV" fov="120.000" maxpixelzoom="2.0"
 			fovmin="70" fovmax="140" limitview="auto" />
@@ -2021,7 +2021,7 @@
 	</scene>
 	<scene name="scene_img_20250829_200915_00_517" title="IMG_20250829_200915_00_517" onstart=""
 		thumburl="panos/IMG_20250829_200915_00_517.tiles/thumb.jpg" lat="24.43780556"
-		lng="118.08925000" alt="24.60" heading="0.0" map_x="129" map_y="75">
+		lng="118.08925000" alt="24.60" heading="0.0">
 		<control bouncinglimits="calc:image.cube ? true : false" />
 		<view hlookat="-54.186" vlookat="0.258" fovtype="MFOV" fov="120.000" maxpixelzoom="2.0"
 			fovmin="70" fovmax="140" limitview="auto" />
@@ -2039,7 +2039,7 @@
 	</scene>
 	<scene name="scene_img_20250829_201047_00_518" title="IMG_20250829_201047_00_518" onstart=""
 		thumburl="panos/IMG_20250829_201047_00_518.tiles/thumb.jpg" lat="24.43780556"
-		lng="118.08925000" alt="24.60" heading="0.0" map_x="129" map_y="69">
+		lng="118.08925000" alt="24.60" heading="0.0">
 		<control bouncinglimits="calc:image.cube ? true : false" />
 		<view hlookat="-42.768" vlookat="1.034" fovtype="MFOV" fov="120.000" maxpixelzoom="2.0"
 			fovmin="70" fovmax="140" limitview="auto" />
@@ -2057,7 +2057,7 @@
 
 	<scene name="scene_img_20250829_201103_00_519" title="IMG_20250829_201103_00_519" onstart=""
 		thumburl="panos/IMG_20250829_201103_00_519.tiles/thumb.jpg" lat="24.43780556"
-		lng="118.08925000" alt="24.60" heading="0.0" map_x="129" map_y="63">
+		lng="118.08925000" alt="24.60" heading="0.0">
 		<control bouncinglimits="calc:image.cube ? true : false" />
 		<view hlookat="-45.479" vlookat="2.067" fovtype="MFOV" fov="120.000" maxpixelzoom="2.0"
 			fovmin="70" fovmax="140" limitview="auto" />
@@ -2075,7 +2075,7 @@
 
 	<scene name="scene_img_20250829_201119_00_520" title="IMG_20250829_201119_00_520" onstart=""
 		thumburl="panos/IMG_20250829_201119_00_520.tiles/thumb.jpg" lat="24.43780556"
-		lng="118.08925000" alt="24.60" heading="0.0" map_x="129" map_y="57">
+		lng="118.08925000" alt="24.60" heading="0.0">
 		<control bouncinglimits="calc:image.cube ? true : false" />
 		<view hlookat="-44.172" vlookat="1.030" fovtype="MFOV" fov="120.000" maxpixelzoom="2.0"
 			fovmin="70" fovmax="140" limitview="auto" />
@@ -2093,7 +2093,7 @@
 
 	<scene name="scene_img_20250829_201140_00_521" title="IMG_20250829_201140_00_521" onstart=""
 		thumburl="panos/IMG_20250829_201140_00_521.tiles/thumb.jpg" lat="24.43780556"
-		lng="118.08925000" alt="24.60" heading="0.0" map_x="129" map_y="51">
+		lng="118.08925000" alt="24.60" heading="0.0">
 
 		<control bouncinglimits="calc:image.cube ? true : false" />
 
@@ -2136,7 +2136,7 @@
 
 	<scene name="scene_img_20250829_201208_00_523" title="IMG_20250829_201208_00_523" onstart=""
 		thumburl="panos/IMG_20250829_201208_00_523.tiles/thumb.jpg" lat="24.43780556"
-		lng="118.08925000" alt="24.60" heading="0.0" map_x="129" map_y="45">
+		lng="118.08925000" alt="24.60" heading="0.0">
 
 		<control bouncinglimits="calc:image.cube ? true : false" />
 
@@ -2161,7 +2161,7 @@
 
 	<scene name="scene_img_20250829_201239_00_524" title="IMG_20250829_201239_00_524" onstart=""
 		thumburl="panos/IMG_20250829_201239_00_524.tiles/thumb.jpg" lat="24.43780556"
-		lng="118.08925000" alt="24.60" heading="0.0" map_x="134" map_y="45">
+		lng="118.08925000" alt="24.60" heading="0.0">
 
 		<control bouncinglimits="calc:image.cube ? true : false" />
 
@@ -2186,7 +2186,7 @@
 
 	<scene name="scene_img_20250829_201254_00_525" title="IMG_20250829_201254_00_525" onstart=""
 		thumburl="panos/IMG_20250829_201254_00_525.tiles/thumb.jpg" lat="24.43780556"
-		lng="118.08925000" alt="24.60" heading="0.0" map_x="139" map_y="45">
+		lng="118.08925000" alt="24.60" heading="0.0">
 
 		<control bouncinglimits="calc:image.cube ? true : false" />
 
@@ -2209,7 +2209,7 @@
 
 	<scene name="scene_img_20250829_201309_00_526" title="IMG_20250829_201309_00_526" onstart=""
 		thumburl="panos/IMG_20250829_201309_00_526.tiles/thumb.jpg" lat="24.43780556"
-		lng="118.08925000" alt="24.60" heading="0.0" map_x="144" map_y="45">
+		lng="118.08925000" alt="24.60" heading="0.0">
 
 		<control bouncinglimits="calc:image.cube ? true : false" />
 
@@ -2234,7 +2234,7 @@
 
 	<scene name="scene_img_20250829_201339_00_527" title="IMG_20250829_201339_00_527" onstart=""
 		thumburl="panos/IMG_20250829_201339_00_527.tiles/thumb.jpg" lat="24.43780556"
-		lng="118.08925000" alt="24.60" heading="0.0" map_x="149" map_y="45">
+		lng="118.08925000" alt="24.60" heading="0.0">
 
 		<control bouncinglimits="calc:image.cube ? true : false" />
 
@@ -2259,7 +2259,7 @@
 
 	<scene name="scene_img_20250829_201356_00_528" title="IMG_20250829_201356_00_528" onstart=""
 		thumburl="panos/IMG_20250829_201356_00_528.tiles/thumb.jpg" lat="24.43780556"
-		lng="118.08925000" alt="24.60" heading="0.0" map_x="154" map_y="45">
+		lng="118.08925000" alt="24.60" heading="0.0">
 
 		<control bouncinglimits="calc:image.cube ? true : false" />
 
@@ -2284,7 +2284,7 @@
 
 	<scene name="scene_img_20250829_201411_00_529" title="IMG_20250829_201411_00_529" onstart=""
 		thumburl="panos/IMG_20250829_201411_00_529.tiles/thumb.jpg" lat="24.43780556"
-		lng="118.08925000" alt="24.60" heading="0.0" map_x="159" map_y="45">
+		lng="118.08925000" alt="24.60" heading="0.0">
 
 		<control bouncinglimits="calc:image.cube ? true : false" />
 
@@ -2309,7 +2309,7 @@
 
 	<scene name="scene_img_20250829_201426_00_530" title="IMG_20250829_201426_00_530" onstart=""
 		thumburl="panos/IMG_20250829_201426_00_530.tiles/thumb.jpg" lat="24.43780556"
-		lng="118.08925000" alt="24.60" heading="0.0" map_x="164" map_y="45">
+		lng="118.08925000" alt="24.60" heading="0.0">
 
 		<control bouncinglimits="calc:image.cube ? true : false" />
 
@@ -2334,7 +2334,7 @@
 
 	<scene name="scene_img_20250829_201443_00_531" title="IMG_20250829_201443_00_531" onstart=""
 		thumburl="panos/IMG_20250829_201443_00_531.tiles/thumb.jpg" lat="24.43780556"
-		lng="118.08925000" alt="24.60" heading="0.0" map_x="169" map_y="45">
+		lng="118.08925000" alt="24.60" heading="0.0">
 
 		<control bouncinglimits="calc:image.cube ? true : false" />
 
@@ -2359,7 +2359,7 @@
 
 	<scene name="scene_img_20250829_201459_00_532" title="IMG_20250829_201459_00_532" onstart=""
 		thumburl="panos/IMG_20250829_201459_00_532.tiles/thumb.jpg" lat="24.43780556"
-		lng="118.08925000" alt="24.60" heading="0.0" map_x="174" map_y="45">
+		lng="118.08925000" alt="24.60" heading="0.0">
 
 		<control bouncinglimits="calc:image.cube ? true : false" />
 
@@ -2384,7 +2384,7 @@
 
 	<scene name="scene_img_20250829_201539_00_533" title="IMG_20250829_201539_00_533" onstart=""
 		thumburl="panos/IMG_20250829_201539_00_533.tiles/thumb.jpg" lat="24.43780556"
-		lng="118.08925000" alt="24.60" heading="0.0" map_x="179" map_y="45">
+		lng="118.08925000" alt="24.60" heading="0.0">
 
 		<control bouncinglimits="calc:image.cube ? true : false" />
 
@@ -2409,7 +2409,7 @@
 
 	<scene name="scene_img_20250829_201655_00_534" title="IMG_20250829_201655_00_534" onstart=""
 		thumburl="panos/IMG_20250829_201655_00_534.tiles/thumb.jpg" lat="24.43780556"
-		lng="118.08925000" alt="24.60" heading="0.0" map_x="184" map_y="45">
+		lng="118.08925000" alt="24.60" heading="0.0">
 
 		<control bouncinglimits="calc:image.cube ? true : false" />
 
@@ -2434,7 +2434,7 @@
 
 	<scene name="scene_img_20250829_201709_00_535" title="IMG_20250829_201709_00_535" onstart=""
 		thumburl="panos/IMG_20250829_201709_00_535.tiles/thumb.jpg" lat="24.43780556"
-		lng="118.08925000" alt="24.60" heading="0.0" map_x="189" map_y="45">
+		lng="118.08925000" alt="24.60" heading="0.0">
 
 		<control bouncinglimits="calc:image.cube ? true : false" />
 
@@ -2459,7 +2459,7 @@
 
 	<scene name="scene_img_20250829_201804_00_536" title="IMG_20250829_201804_00_536" onstart=""
 		thumburl="panos/IMG_20250829_201804_00_536.tiles/thumb.jpg" lat="24.43780556"
-		lng="118.08925000" alt="24.60" heading="0.0" map_x="198" map_y="45">
+		lng="118.08925000" alt="24.60" heading="0.0">
 
 		<control bouncinglimits="calc:image.cube ? true : false" />
 
@@ -2484,7 +2484,7 @@
 
 	<scene name="scene_img_20250829_201909_00_537" title="IMG_20250829_201909_00_537" onstart=""
 		thumburl="panos/IMG_20250829_201909_00_537.tiles/thumb.jpg" lat="24.43780556"
-		lng="118.08925000" alt="24.60" heading="0.0" map_x="216" map_y="45">
+		lng="118.08925000" alt="24.60" heading="0.0">
 
 		<control bouncinglimits="calc:image.cube ? true : false" />
 
@@ -2509,7 +2509,7 @@
 
 	<scene name="scene_img_20250829_201938_00_538" title="IMG_20250829_201938_00_538" onstart=""
 		thumburl="panos/IMG_20250829_201938_00_538.tiles/thumb.jpg" lat="24.43880556"
-		lng="118.09027778" alt="21.60" heading="0.0" map_x="222" map_y="45">
+		lng="118.09027778" alt="21.60" heading="0.0">
 
 		<control bouncinglimits="calc:image.cube ? true : false" />
 
@@ -2534,7 +2534,7 @@
 
 	<scene name="scene_img_20250829_201954_00_539" title="IMG_20250829_201954_00_539" onstart=""
 		thumburl="panos/IMG_20250829_201954_00_539.tiles/thumb.jpg" lat="24.43880556"
-		lng="118.09027778" alt="21.60" heading="0.0" map_x="228" map_y="45">
+		lng="118.09027778" alt="21.60" heading="0.0">
 
 		<control bouncinglimits="calc:image.cube ? true : false" />
 
@@ -2559,7 +2559,7 @@
 
 	<scene name="scene_img_20250829_202025_00_540" title="IMG_20250829_202025_00_540" onstart=""
 		thumburl="panos/IMG_20250829_202025_00_540.tiles/thumb.jpg" lat="24.43880556"
-		lng="118.09027778" alt="21.60" heading="0.0" map_x="234" map_y="45">
+		lng="118.09027778" alt="21.60" heading="0.0">
 
 		<control bouncinglimits="calc:image.cube ? true : false" />
 
@@ -2584,7 +2584,7 @@
 
 	<scene name="scene_img_20250829_202040_00_541" title="IMG_20250829_202040_00_541" onstart=""
 		thumburl="panos/IMG_20250829_202040_00_541.tiles/thumb.jpg" lat="24.43880556"
-		lng="118.09027778" alt="21.60" heading="0.0" map_x="240" map_y="45">
+		lng="118.09027778" alt="21.60" heading="0.0">
 
 		<control bouncinglimits="calc:image.cube ? true : false" />
 
@@ -2609,7 +2609,7 @@
 
 	<scene name="scene_img_20250829_202129_00_542" title="IMG_20250829_202129_00_542" onstart=""
 		thumburl="panos/IMG_20250829_202129_00_542.tiles/thumb.jpg" lat="24.43880556"
-		lng="118.09027778" alt="21.60" heading="0.0" map_x="246" map_y="45">
+		lng="118.09027778" alt="21.60" heading="0.0">
 
 		<control bouncinglimits="calc:image.cube ? true : false" />
 
@@ -2634,7 +2634,7 @@
 
 	<scene name="scene_img_20250829_202146_00_543" title="IMG_20250829_202146_00_543" onstart=""
 		thumburl="panos/IMG_20250829_202146_00_543.tiles/thumb.jpg" lat="24.43880556"
-		lng="118.09027778" alt="21.60" heading="0.0" map_x="252" map_y="45">
+		lng="118.09027778" alt="21.60" heading="0.0">
 
 		<control bouncinglimits="calc:image.cube ? true : false" />
 
@@ -2659,7 +2659,7 @@
 
 	<scene name="scene_img_20250829_202202_00_544" title="IMG_20250829_202202_00_544" onstart=""
 		thumburl="panos/IMG_20250829_202202_00_544.tiles/thumb.jpg" lat="24.43880556"
-		lng="118.09027778" alt="21.60" heading="0.0" map_x="258" map_y="45">
+		lng="118.09027778" alt="21.60" heading="0.0">
 
 		<control bouncinglimits="calc:image.cube ? true : false" />
 
@@ -2684,7 +2684,7 @@
 
 	<scene name="scene_img_20250829_202217_00_545" title="IMG_20250829_202217_00_545" onstart=""
 		thumburl="panos/IMG_20250829_202217_00_545.tiles/thumb.jpg" lat="24.43880556"
-		lng="118.09027778" alt="21.60" heading="0.0" map_x="264" map_y="45">
+		lng="118.09027778" alt="21.60" heading="0.0">
 
 		<control bouncinglimits="calc:image.cube ? true : false" />
 
@@ -2709,7 +2709,7 @@
 
 	<scene name="scene_img_20250829_202233_00_546" title="IMG_20250829_202233_00_546" onstart=""
 		thumburl="panos/IMG_20250829_202233_00_546.tiles/thumb.jpg" lat="24.43880556"
-		lng="118.09027778" alt="21.60" heading="0.0" map_x="270" map_y="45">
+		lng="118.09027778" alt="21.60" heading="0.0">
 
 		<control bouncinglimits="calc:image.cube ? true : false" />
 
@@ -2734,7 +2734,7 @@
 
 	<scene name="scene_img_20250829_202249_00_547" title="IMG_20250829_202249_00_547" onstart=""
 		thumburl="panos/IMG_20250829_202249_00_547.tiles/thumb.jpg" lat="24.43880556"
-		lng="118.09027778" alt="21.60" heading="0.0" map_x="276" map_y="45">
+		lng="118.09027778" alt="21.60" heading="0.0">
 
 		<control bouncinglimits="calc:image.cube ? true : false" />
 
@@ -2759,7 +2759,7 @@
 
 	<scene name="scene_img_20250829_202306_00_548" title="IMG_20250829_202306_00_548" onstart=""
 		thumburl="panos/IMG_20250829_202306_00_548.tiles/thumb.jpg" lat="24.43880556"
-		lng="118.09027778" alt="21.60" heading="0.0" map_x="282" map_y="45">
+		lng="118.09027778" alt="21.60" heading="0.0">
 
 		<control bouncinglimits="calc:image.cube ? true : false" />
 
@@ -2784,7 +2784,7 @@
 
 	<scene name="scene_img_20250829_202334_00_549" title="IMG_20250829_202334_00_549" onstart=""
 		thumburl="panos/IMG_20250829_202334_00_549.tiles/thumb.jpg" lat="24.43880556"
-		lng="118.09027778" alt="21.60" heading="0.0" map_x="288" map_y="45">
+		lng="118.09027778" alt="21.60" heading="0.0">
 
 		<control bouncinglimits="calc:image.cube ? true : false" />
 
@@ -2809,7 +2809,7 @@
 
 	<scene name="scene_img_20250829_202349_00_550" title="IMG_20250829_202349_00_550" onstart=""
 		thumburl="panos/IMG_20250829_202349_00_550.tiles/thumb.jpg" lat="24.43880556"
-		lng="118.09027778" alt="21.60" heading="0.0" map_x="294" map_y="45">
+		lng="118.09027778" alt="21.60" heading="0.0">
 
 		<control bouncinglimits="calc:image.cube ? true : false" />
 
@@ -2834,7 +2834,7 @@
 
 	<scene name="scene_img_20250829_202414_00_551" title="IMG_20250829_202414_00_551" onstart=""
 		thumburl="panos/IMG_20250829_202414_00_551.tiles/thumb.jpg" lat="24.43880556"
-		lng="118.09027778" alt="21.60" heading="0.0" map_x="300" map_y="45">
+		lng="118.09027778" alt="21.60" heading="0.0">
 
 		<control bouncinglimits="calc:image.cube ? true : false" />
 
@@ -2859,7 +2859,7 @@
 
 	<scene name="scene_img_20250829_202424_00_552" title="IMG_20250829_202424_00_552" onstart=""
 		thumburl="panos/IMG_20250829_202424_00_552.tiles/thumb.jpg" lat="24.43880556"
-		lng="118.09027778" alt="21.60" heading="0.0" map_x="306" map_y="45">
+		lng="118.09027778" alt="21.60" heading="0.0">
 
 		<control bouncinglimits="calc:image.cube ? true : false" />
 
@@ -2884,7 +2884,7 @@
 
 	<scene name="scene_img_20250829_202440_00_553" title="IMG_20250829_202440_00_553" onstart=""
 		thumburl="panos/IMG_20250829_202440_00_553.tiles/thumb.jpg" lat="24.43880556"
-		lng="118.09027778" alt="21.60" heading="0.0" map_x="312" map_y="45">
+		lng="118.09027778" alt="21.60" heading="0.0">
 
 		<control bouncinglimits="calc:image.cube ? true : false" />
 
@@ -2909,7 +2909,7 @@
 
 	<scene name="scene_img_20250829_202534_00_554" title="IMG_20250829_202534_00_554" onstart=""
 		thumburl="panos/IMG_20250829_202534_00_554.tiles/thumb.jpg" lat="24.43880556"
-		lng="118.09027778" alt="21.60" heading="0.0" map_x="315" map_y="45">
+		lng="118.09027778" alt="21.60" heading="0.0">
 
 		<control bouncinglimits="calc:image.cube ? true : false" />
 
@@ -2934,7 +2934,7 @@
 
 	<scene name="scene_img_20250829_202552_00_555" title="IMG_20250829_202552_00_555" onstart=""
 		thumburl="panos/IMG_20250829_202552_00_555.tiles/thumb.jpg" lat="24.43880556"
-		lng="118.09027778" alt="21.60" heading="0.0" map_x="317" map_y="45">
+		lng="118.09027778" alt="21.60" heading="0.0">
 
 		<control bouncinglimits="calc:image.cube ? true : false" />
 
@@ -2959,7 +2959,7 @@
 
 	<scene name="scene_img_20250829_202701_00_557" title="IMG_20250829_202701_00_557" onstart=""
 		thumburl="panos/IMG_20250829_202701_00_557.tiles/thumb.jpg" lat="24.43880556"
-		lng="118.09027778" alt="21.60" heading="0.0" map_x="321" map_y="45">
+		lng="118.09027778" alt="21.60" heading="0.0">
 		<control bouncinglimits="calc:image.cube ? true : false" />
 		<view hlookat="-48.322" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="2.0"
 			fovmin="70" fovmax="140" limitview="auto" />
@@ -2978,7 +2978,7 @@
 
 	<scene name="scene_img_20250829_202754_00_559" title="IMG_20250829_202754_00_559" onstart=""
 		thumburl="panos/IMG_20250829_202754_00_559.tiles/thumb.jpg" lat="24.43880556"
-		lng="118.09027778" alt="21.60" heading="0.0" map_x="326" map_y="45">
+		lng="118.09027778" alt="21.60" heading="0.0">
 
 		<control bouncinglimits="calc:image.cube ? true : false" />
 
@@ -3002,7 +3002,7 @@
 
 	<scene name="scene_img_20250829_202818_00_560" title="IMG_20250829_202818_00_560" onstart=""
 		thumburl="panos/IMG_20250829_202818_00_560.tiles/thumb.jpg" lat="24.43880556"
-		lng="118.09027778" alt="21.60" heading="0.0" map_x="324" map_y="50">
+		lng="118.09027778" alt="21.60" heading="0.0">
 
 		<control bouncinglimits="calc:image.cube ? true : false" />
 
@@ -3029,7 +3029,7 @@
 
 	<scene name="scene_img_20250829_202929_00_561" title="IMG_20250829_202929_00_561" onstart=""
 		thumburl="panos/IMG_20250829_202929_00_561.tiles/thumb.jpg" lat="24.43880556"
-		lng="118.09027778" alt="21.60" heading="0.0" map_x="324" map_y="58">
+		lng="118.09027778" alt="21.60" heading="0.0">
 
 		<control bouncinglimits="calc:image.cube ? true : false" />
 
@@ -3053,7 +3053,7 @@
 
 	<scene name="scene_img_20250829_203016_00_562" title="IMG_20250829_203016_00_562" onstart=""
 		thumburl="panos/IMG_20250829_203016_00_562.tiles/thumb.jpg" lat="24.43802778"
-		lng="118.09113889" alt="36.10" heading="0.0" map_x="334" map_y="58">
+		lng="118.09113889" alt="36.10" heading="0.0">
 
 		<control bouncinglimits="calc:image.cube ? true : false" />
 
@@ -3078,7 +3078,7 @@
 
 	<scene name="scene_img_20250829_203032_00_563" title="IMG_20250829_203032_00_563" onstart=""
 		thumburl="panos/IMG_20250829_203032_00_563.tiles/thumb.jpg" lat="24.43797222"
-		lng="118.09125000" alt="42.90" heading="0.0" map_x="334" map_y="66">
+		lng="118.09125000" alt="42.90" heading="0.0">
 
 		<control bouncinglimits="calc:image.cube ? true : false" />
 
@@ -3105,7 +3105,7 @@
 
 	<scene name="scene_img_20250829_203106_00_564" title="IMG_20250829_203106_00_564" onstart=""
 		thumburl="panos/IMG_20250829_203106_00_564.tiles/thumb.jpg" lat="24.43802778"
-		lng="118.09119444" alt="30.80" heading="0.0" map_x="324" map_y="66">
+		lng="118.09119444" alt="30.80" heading="0.0">
 
 		<control bouncinglimits="calc:image.cube ? true : false" />
 
@@ -3132,7 +3132,7 @@
 
 	<scene name="scene_img_20250829_203125_00_565" title="IMG_20250829_203125_00_565" onstart=""
 		thumburl="panos/IMG_20250829_203125_00_565.tiles/thumb.jpg" lat="24.43802778"
-		lng="118.09119444" alt="30.80" heading="0.0" map_x="324" map_y="74">
+		lng="118.09119444" alt="30.80" heading="0.0">
 
 		<control bouncinglimits="calc:image.cube ? true : false" />
 
@@ -3155,7 +3155,7 @@
 
 	<scene name="scene_img_20250829_203141_00_566" title="IMG_20250829_203141_00_566" onstart=""
 		thumburl="panos/IMG_20250829_203141_00_566.tiles/thumb.jpg" lat="24.43802778"
-		lng="118.09119444" alt="30.80" heading="0.0" map_x="324" map_y="82">
+		lng="118.09119444" alt="30.80" heading="0.0">
 
 		<control bouncinglimits="calc:image.cube ? true : false" />
 
@@ -3180,7 +3180,7 @@
 
 	<scene name="scene_img_20250829_203337_00_567" title="IMG_20250829_203337_00_567" onstart=""
 		thumburl="panos/IMG_20250829_203337_00_567.tiles/thumb.jpg" lat="24.43802778"
-		lng="118.09119444" alt="30.80" heading="0.0" map_x="324" map_y="90">
+		lng="118.09119444" alt="30.80" heading="0.0">
 
 		<control bouncinglimits="calc:image.cube ? true : false" />
 
@@ -3205,7 +3205,7 @@
 
 	<scene name="scene_img_20250829_203409_00_568" title="IMG_20250829_203409_00_568" onstart=""
 		thumburl="panos/IMG_20250829_203409_00_568.tiles/thumb.jpg" lat="24.43802778"
-		lng="118.09119444" alt="30.80" heading="0.0" map_x="324" map_y="98">
+		lng="118.09119444" alt="30.80" heading="0.0">
 
 		<control bouncinglimits="calc:image.cube ? true : false" />
 
@@ -3230,7 +3230,7 @@
 
 	<scene name="scene_img_20250829_203439_00_569" title="IMG_20250829_203439_00_569" onstart=""
 		thumburl="panos/IMG_20250829_203439_00_569.tiles/thumb.jpg" lat="24.43802778"
-		lng="118.09119444" alt="30.80" heading="0.0" map_x="324" map_y="106">
+		lng="118.09119444" alt="30.80" heading="0.0">
 
 		<control bouncinglimits="calc:image.cube ? true : false" />
 
@@ -3255,7 +3255,7 @@
 
 	<scene name="scene_img_20250829_203457_00_570" title="IMG_20250829_203457_00_570" onstart=""
 		thumburl="panos/IMG_20250829_203457_00_570.tiles/thumb.jpg" lat="24.43802778"
-		lng="118.09119444" alt="30.80" heading="0.0" map_x="324" map_y="114">
+		lng="118.09119444" alt="30.80" heading="0.0">
 
 		<control bouncinglimits="calc:image.cube ? true : false" />
 
@@ -3280,7 +3280,7 @@
 
 	<scene name="scene_img_20250829_203513_00_571" title="IMG_20250829_203513_00_571" onstart=""
 		thumburl="panos/IMG_20250829_203513_00_571.tiles/thumb.jpg" lat="24.43802778"
-		lng="118.09119444" alt="30.80" heading="0.0" map_x="324" map_y="122">
+		lng="118.09119444" alt="30.80" heading="0.0">
 
 		<control bouncinglimits="calc:image.cube ? true : false" />
 
@@ -3307,7 +3307,7 @@
 
 	<scene name="scene_img_20250829_203529_00_572" title="IMG_20250829_203529_00_572" onstart=""
 		thumburl="panos/IMG_20250829_203529_00_572.tiles/thumb.jpg" lat="24.43802778"
-		lng="118.09119444" alt="30.80" heading="0.0" map_x="324" map_y="130">
+		lng="118.09119444" alt="30.80" heading="0.0">
 
 		<control bouncinglimits="calc:image.cube ? true : false" />
 
@@ -3332,7 +3332,7 @@
 
 	<scene name="scene_img_20250829_203613_00_573" title="IMG_20250829_203613_00_573" onstart=""
 		thumburl="panos/IMG_20250829_203613_00_573.tiles/thumb.jpg" lat="24.43802778"
-		lng="118.09119444" alt="30.80" heading="0.0" map_x="324" map_y="138">
+		lng="118.09119444" alt="30.80" heading="0.0">
 
 		<control bouncinglimits="calc:image.cube ? true : false" />
 
@@ -3357,7 +3357,7 @@
 
 	<scene name="scene_img_20250829_203628_00_574" title="IMG_20250829_203628_00_574" onstart=""
 		thumburl="panos/IMG_20250829_203628_00_574.tiles/thumb.jpg" lat="24.43802778"
-		lng="118.09119444" alt="30.80" heading="0.0" map_x="324" map_y="146">
+		lng="118.09119444" alt="30.80" heading="0.0">
 
 		<control bouncinglimits="calc:image.cube ? true : false" />
 
@@ -3382,7 +3382,7 @@
 
 	<scene name="scene_img_20250829_203642_00_575" title="IMG_20250829_203642_00_575" onstart=""
 		thumburl="panos/IMG_20250829_203642_00_575.tiles/thumb.jpg" lat="24.43802778"
-		lng="118.09119444" alt="30.80" heading="0.0" map_x="324" map_y="154">
+		lng="118.09119444" alt="30.80" heading="0.0">
 
 		<control bouncinglimits="calc:image.cube ? true : false" />
 
@@ -3407,7 +3407,7 @@
 
 	<scene name="scene_img_20250829_203705_00_577" title="IMG_20250829_203705_00_577" onstart=""
 		thumburl="panos/IMG_20250829_203705_00_577.tiles/thumb.jpg" lat="24.43802778"
-		lng="118.09119444" alt="30.80" heading="0.0" map_x="324" map_y="162">
+		lng="118.09119444" alt="30.80" heading="0.0">
 
 		<control bouncinglimits="calc:image.cube ? true : false" />
 
@@ -3432,7 +3432,7 @@
 
 	<scene name="scene_img_20250829_203719_00_578" title="IMG_20250829_203719_00_578" onstart=""
 		thumburl="panos/IMG_20250829_203719_00_578.tiles/thumb.jpg" lat="24.43802778"
-		lng="118.09119444" alt="30.80" heading="0.0" map_x="324" map_y="170">
+		lng="118.09119444" alt="30.80" heading="0.0">
 
 		<control bouncinglimits="calc:image.cube ? true : false" />
 
@@ -3457,7 +3457,7 @@
 
 	<scene name="scene_img_20250829_203834_00_579" title="IMG_20250829_203834_00_579" onstart=""
 		thumburl="panos/IMG_20250829_203834_00_579.tiles/thumb.jpg" lat="24.43802778"
-		lng="118.09119444" alt="30.80" heading="0.0" map_x="324" map_y="178">
+		lng="118.09119444" alt="30.80" heading="0.0">
 
 		<control bouncinglimits="calc:image.cube ? true : false" />
 
@@ -3482,7 +3482,7 @@
 
 	<scene name="scene_img_20250829_203850_00_580" title="IMG_20250829_203850_00_580" onstart=""
 		thumburl="panos/IMG_20250829_203850_00_580.tiles/thumb.jpg" lat="24.43802778"
-		lng="118.09119444" alt="30.80" heading="0.0" map_x="324" map_y="186">
+		lng="118.09119444" alt="30.80" heading="0.0">
 
 		<control bouncinglimits="calc:image.cube ? true : false" />
 
@@ -3507,7 +3507,7 @@
 
 	<scene name="scene_img_20250829_203926_00_581" title="IMG_20250829_203926_00_581" onstart=""
 		thumburl="panos/IMG_20250829_203926_00_581.tiles/thumb.jpg" lat="24.43802778"
-		lng="118.09119444" alt="30.80" heading="0.0" map_x="324" map_y="194">
+		lng="118.09119444" alt="30.80" heading="0.0">
 
 		<control bouncinglimits="calc:image.cube ? true : false" />
 
@@ -3531,7 +3531,7 @@
 
 	<scene name="scene_img_20250829_203957_00_582" title="IMG_20250829_203957_00_582" onstart=""
 		thumburl="panos/IMG_20250829_203957_00_582.tiles/thumb.jpg" lat="24.43802778"
-		lng="118.09119444" alt="30.80" heading="0.0" map_x="324" map_y="202">
+		lng="118.09119444" alt="30.80" heading="0.0">
 
 		<control bouncinglimits="calc:image.cube ? true : false" />
 
@@ -3556,7 +3556,7 @@
 
 	<scene name="scene_img_20250829_204030_00_583" title="IMG_20250829_204030_00_583" onstart=""
 		thumburl="panos/IMG_20250829_204030_00_583.tiles/thumb.jpg" lat="24.43802778"
-		lng="118.09119444" alt="30.80" heading="0.0" map_x="324" map_y="210">
+		lng="118.09119444" alt="30.80" heading="0.0">
 
 		<control bouncinglimits="calc:image.cube ? true : false" />
 
@@ -3581,7 +3581,7 @@
 
 	<scene name="scene_img_20250829_204055_00_584" title="IMG_20250829_204055_00_584" onstart=""
 		thumburl="panos/IMG_20250829_204055_00_584.tiles/thumb.jpg" lat="24.43802778"
-		lng="118.09119444" alt="30.80" heading="0.0" map_x="321" map_y="216">
+		lng="118.09119444" alt="30.80" heading="0.0">
 
 		<control bouncinglimits="calc:image.cube ? true : false" />
 
@@ -3606,7 +3606,7 @@
 
 	<scene name="scene_img_20250829_204130_00_585" title="IMG_20250829_204130_00_585" onstart=""
 		thumburl="panos/IMG_20250829_204130_00_585.tiles/thumb.jpg" lat="24.43802778"
-		lng="118.09119444" alt="30.80" heading="0.0" map_x="317" map_y="216">
+		lng="118.09119444" alt="30.80" heading="0.0">
 
 		<control bouncinglimits="calc:image.cube ? true : false" />
 
@@ -3630,7 +3630,7 @@
 
 	<scene name="scene_img_20250829_204147_00_586" title="IMG_20250829_204147_00_586" onstart=""
 		thumburl="panos/IMG_20250829_204147_00_586.tiles/thumb.jpg" lat="24.43802778"
-		lng="118.09119444" alt="30.80" heading="0.0" map_x="310.8" map_y="216">
+		lng="118.09119444" alt="30.80" heading="0.0">
 
 		<control bouncinglimits="calc:image.cube ? true : false" />
 
@@ -3654,7 +3654,7 @@
 
 	<scene name="scene_img_20250829_204415_00_587" title="IMG_20250829_204415_00_587" onstart=""
 		thumburl="panos/IMG_20250829_204415_00_587.tiles/thumb.jpg" lat="24.43802778"
-		lng="118.09119444" alt="30.80" heading="0.0" map_x="304.6" map_y="216">
+		lng="118.09119444" alt="30.80" heading="0.0">
 
 		<control bouncinglimits="calc:image.cube ? true : false" />
 
@@ -3679,7 +3679,7 @@
 
 	<scene name="scene_img_20250829_204453_00_588" title="IMG_20250829_204453_00_588" onstart=""
 		thumburl="panos/IMG_20250829_204453_00_588.tiles/thumb.jpg" lat="24.43802778"
-		lng="118.09119444" alt="30.80" heading="0.0" map_x="298.4" map_y="216">
+		lng="118.09119444" alt="30.80" heading="0.0">
 
 		<control bouncinglimits="calc:image.cube ? true : false" />
 
@@ -3704,7 +3704,7 @@
 
 	<scene name="scene_img_20250829_204538_00_589" title="IMG_20250829_204538_00_589" onstart=""
 		thumburl="panos/IMG_20250829_204538_00_589.tiles/thumb.jpg" lat="24.43802778"
-		lng="118.09119444" alt="30.80" heading="0.0" map_x="292.2" map_y="216">
+		lng="118.09119444" alt="30.80" heading="0.0">
 
 		<control bouncinglimits="calc:image.cube ? true : false" />
 
@@ -3729,7 +3729,7 @@
 
 	<scene name="scene_img_20250829_204622_00_590" title="IMG_20250829_204622_00_590" onstart=""
 		thumburl="panos/IMG_20250829_204622_00_590.tiles/thumb.jpg" lat="24.43802778"
-		lng="118.09119444" alt="30.80" heading="0.0" map_x="286" map_y="216">
+		lng="118.09119444" alt="30.80" heading="0.0">
 
 		<control bouncinglimits="calc:image.cube ? true : false" />
 
@@ -3754,7 +3754,7 @@
 
 	<scene name="scene_img_20250829_204639_00_591" title="IMG_20250829_204639_00_591" onstart=""
 		thumburl="panos/IMG_20250829_204639_00_591.tiles/thumb.jpg" lat="24.43802778"
-		lng="118.09119444" alt="30.80" heading="0.0" map_x="279.8" map_y="216">
+		lng="118.09119444" alt="30.80" heading="0.0">
 
 		<control bouncinglimits="calc:image.cube ? true : false" />
 
@@ -3778,7 +3778,7 @@
 
 	<scene name="scene_img_20250829_204706_00_592" title="IMG_20250829_204706_00_592" onstart=""
 		thumburl="panos/IMG_20250829_204706_00_592.tiles/thumb.jpg" lat="24.43802778"
-		lng="118.09119444" alt="30.80" heading="0.0" map_x="273.6" map_y="216">
+		lng="118.09119444" alt="30.80" heading="0.0">
 
 		<control bouncinglimits="calc:image.cube ? true : false" />
 
@@ -3803,7 +3803,7 @@
 
 	<scene name="scene_img_20250829_204724_00_593" title="IMG_20250829_204724_00_593" onstart=""
 		thumburl="panos/IMG_20250829_204724_00_593.tiles/thumb.jpg" lat="24.43802778"
-		lng="118.09119444" alt="30.80" heading="0.0" map_x="267.4" map_y="216">
+		lng="118.09119444" alt="30.80" heading="0.0">
 
 		<control bouncinglimits="calc:image.cube ? true : false" />
 
@@ -3828,7 +3828,7 @@
 
 	<scene name="scene_img_20250829_204852_00_594" title="IMG_20250829_204852_00_594" onstart=""
 		thumburl="panos/IMG_20250829_204852_00_594.tiles/thumb.jpg" lat="24.43802778"
-		lng="118.09119444" alt="30.80" heading="0.0" map_x="261.2" map_y="216">
+		lng="118.09119444" alt="30.80" heading="0.0">
 
 		<control bouncinglimits="calc:image.cube ? true : false" />
 
@@ -3853,7 +3853,7 @@
 
 	<scene name="scene_img_20250829_204907_00_595" title="IMG_20250829_204907_00_595" onstart=""
 		thumburl="panos/IMG_20250829_204907_00_595.tiles/thumb.jpg" lat="24.43802778"
-		lng="118.09119444" alt="30.80" heading="0.0" map_x="255" map_y="219">
+		lng="118.09119444" alt="30.80" heading="0.0">
 
 		<control bouncinglimits="calc:image.cube ? true : false" />
 
@@ -3878,7 +3878,7 @@
 
 	<scene name="scene_img_20250829_204921_00_596" title="IMG_20250829_204921_00_596" onstart=""
 		thumburl="panos/IMG_20250829_204921_00_596.tiles/thumb.jpg" lat="24.43802778"
-		lng="118.09119444" alt="30.80" heading="0.0" map_x="248.8" map_y="221">
+		lng="118.09119444" alt="30.80" heading="0.0">
 
 		<control bouncinglimits="calc:image.cube ? true : false" />
 
@@ -3903,7 +3903,7 @@
 
 	<scene name="scene_img_20250829_204937_00_597" title="IMG_20250829_204937_00_597" onstart=""
 		thumburl="panos/IMG_20250829_204937_00_597.tiles/thumb.jpg" lat="24.43802778"
-		lng="118.09119444" alt="30.80" heading="0.0" map_x="250" map_y="220">
+		lng="118.09119444" alt="30.80" heading="0.0">
 
 		<control bouncinglimits="calc:image.cube ? true : false" />
 
@@ -3928,7 +3928,7 @@
 
 	<scene name="scene_img_20250829_204956_00_598" title="IMG_20250829_204956_00_598" onstart=""
 		thumburl="panos/IMG_20250829_204956_00_598.tiles/thumb.jpg" lat="24.43802778"
-		lng="118.09119444" alt="30.80" heading="0.0" map_x="244.25" map_y="220">
+		lng="118.09119444" alt="30.80" heading="0.0">
 
 		<control bouncinglimits="calc:image.cube ? true : false" />
 
@@ -3957,7 +3957,7 @@
 
 	<scene name="scene_img_20250829_205012_00_599" title="IMG_20250829_205012_00_599" onstart=""
 		thumburl="panos/IMG_20250829_205012_00_599.tiles/thumb.jpg" lat="24.43802778"
-		lng="118.09119444" alt="30.80" heading="0.0" map_x="238.5" map_y="220">
+		lng="118.09119444" alt="30.80" heading="0.0">
 
 		<control bouncinglimits="calc:image.cube ? true : false" />
 
@@ -3982,7 +3982,7 @@
 
 	<scene name="scene_img_20250829_205027_00_600" title="IMG_20250829_205027_00_600" onstart=""
 		thumburl="panos/IMG_20250829_205027_00_600.tiles/thumb.jpg" lat="24.43802778"
-		lng="118.09119444" alt="30.80" heading="0.0" map_x="232.75" map_y="220">
+		lng="118.09119444" alt="30.80" heading="0.0">
 
 		<control bouncinglimits="calc:image.cube ? true : false" />
 
@@ -4007,7 +4007,7 @@
 
 	<scene name="scene_img_20250829_205042_00_601" title="IMG_20250829_205042_00_601" onstart=""
 		thumburl="panos/IMG_20250829_205042_00_601.tiles/thumb.jpg" lat="24.43802778"
-		lng="118.09119444" alt="30.80" heading="0.0" map_x="227" map_y="220">
+		lng="118.09119444" alt="30.80" heading="0.0">
 
 		<control bouncinglimits="calc:image.cube ? true : false" />
 
@@ -4035,7 +4035,7 @@
 
 	<scene name="scene_img_20250829_205106_00_602" title="IMG_20250829_205106_00_602" onstart=""
 		thumburl="panos/IMG_20250829_205106_00_602.tiles/thumb.jpg" lat="24.43802778"
-		lng="118.09119444" alt="30.80" heading="0.0" map_x="227" map_y="238">
+		lng="118.09119444" alt="30.80" heading="0.0">
 
 		<control bouncinglimits="calc:image.cube ? true : false" />
 
@@ -4063,7 +4063,7 @@
 
 	<scene name="scene_img_20250829_205127_00_603" title="IMG_20250829_205127_00_603" onstart=""
 		thumburl="panos/IMG_20250829_205127_00_603.tiles/thumb.jpg" lat="24.43802778"
-		lng="118.09119444" alt="30.80" heading="0.0" map_x="212" map_y="238">
+		lng="118.09119444" alt="30.80" heading="0.0">
 
 		<control bouncinglimits="calc:image.cube ? true : false" />
 
@@ -4088,7 +4088,7 @@
 
 	<scene name="scene_img_20250829_205146_00_604" title="IMG_20250829_205146_00_604" onstart=""
 		thumburl="panos/IMG_20250829_205146_00_604.tiles/thumb.jpg" lat="24.43763889"
-		lng="118.08952778" alt="2.60" heading="0.0" map_x="204" map_y="238">
+		lng="118.08952778" alt="2.60" heading="0.0">
 
 		<control bouncinglimits="calc:image.cube ? true : false" />
 
@@ -4113,7 +4113,7 @@
 
 	<scene name="scene_img_20250829_205212_00_605" title="IMG_20250829_205212_00_605" onstart=""
 		thumburl="panos/IMG_20250829_205212_00_605.tiles/thumb.jpg" lat="24.43766667"
-		lng="118.08958333" alt="46.90" heading="0.0" map_x="213" map_y="220">
+		lng="118.08958333" alt="46.90" heading="0.0">
 
 		<control bouncinglimits="calc:image.cube ? true : false" />
 
@@ -4138,7 +4138,7 @@
 
 	<scene name="scene_img_20250829_205240_00_606" title="IMG_20250829_205240_00_606" onstart=""
 		thumburl="panos/IMG_20250829_205240_00_606.tiles/thumb.jpg" lat="24.43758333"
-		lng="118.08955556" alt="30.10" heading="0.0" map_x="228" map_y="245">
+		lng="118.08955556" alt="30.10" heading="0.0">
 
 		<control bouncinglimits="calc:image.cube ? true : false" />
 
@@ -4163,7 +4163,7 @@
 
 	<scene name="scene_img_20250829_205317_00_607" title="IMG_20250829_205317_00_607" onstart=""
 		thumburl="panos/IMG_20250829_205317_00_607.tiles/thumb.jpg" lat="24.43708333"
-		lng="118.08958333" alt="7.50" heading="0.0" map_x="246" map_y="245">
+		lng="118.08958333" alt="7.50" heading="0.0">
 
 		<control bouncinglimits="calc:image.cube ? true : false" />
 
@@ -4188,7 +4188,7 @@
 
 	<scene name="scene_img_20250829_205343_00_608" title="IMG_20250829_205343_00_608" onstart=""
 		thumburl="panos/IMG_20250829_205343_00_608.tiles/thumb.jpg" lat="24.43686111"
-		lng="118.08963889" alt="2.10" heading="0.0" map_x="246" map_y="237">
+		lng="118.08963889" alt="2.10" heading="0.0">
 
 		<control bouncinglimits="calc:image.cube ? true : false" />
 
@@ -4325,7 +4325,7 @@
 		<hotspot name="spot1789884901" style="skin_hotspotstyle" ath="-40.207" atv="22.483"
 			depth="1000.0" linkedscene="scene_img_20250829_210145_00_614" linkedscene_hoffset="0.0"
 			use3dtransition="true" />
-		<hotspot name="spot1789884994" style="skin_hotspotstyle" ath="141.416" atv="15.145"
+		<hotspot name="spot1789884994" style="skin_hotspotstyle" ath="143.751" atv="36.906"
 			depth="1000.0" linkedscene="scene_img_20250829_210116_00_612" linkedscene_hoffset="0.0"
 			use3dtransition="true" />
 

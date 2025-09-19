@@ -536,10 +536,10 @@
 				multires="512,1024,2048" />
 		</image>
 
-		<hotspot name="spot_prev" style="skin_hotspotstyle" ath="-90.928" atv="13.035"
-			linkedscene="scene_img_20250829_173851_00_348" linkedscene_hoffset="0.0"
+		<hotspot name="spot_prev" style="skin_hotspotstyle" ath="-102.017" atv="12"
+			linkedscene="scene_IMG_20250829_173851_00_348" linkedscene_hoffset="0.0"
 			use3dtransition="true" />
-		<hotspot name="spot_next" style="skin_hotspotstyle" ath="70.0" atv="12.0"
+		<hotspot name="spot_next" style="skin_hotspotstyle" ath="70.0" atv="12"
 			linkedscene="scene_img_20250829_173851_00_350" />
 
 	</scene>

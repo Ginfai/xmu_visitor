@@ -1,17 +1,25 @@
 <!-- 自定义地图系统 - 响应式布局 -->
-<krpano>
+<krpano onstart="update_map_responsive_layout();">
 
+
+	<!-- 地图展开/收起状态 -->
+	<variable name="map_expanded" type="boolean" value="true" />
 	<!-- 自定义地图容器 -->
-	<layer name="map_container" keep="true" type="container" align="leftbottom" x="20" y="20" 
+	<layer name="map_container" keep="true" type="container" align="leftbottom" x="20" y="20"
 		width="400" height="300" bgalpha="0.7" border="2,0xFFFFFF,0.8">
-		
+
 		<!-- 地图图片 -->
 		<layer name="map_image" url="skin/xm_visitor.png" align="leftbottom" x="0" y="0" width="400"
 			height="300" scale="1.0" />
 
 		<!-- 位置标记 -->
 		<layer name="map_spot" url="skin/ic_track_origin.png" align="lefttop"
-			parent="map_container" x="0" y="0" visible="false" scale="0.5" />
+			parent="map_container" x="0" y="0" visible="false" scale="0.5" zorder="1" />
+
+		<!-- 展开/收起按钮 -->
+		<layer name="map_toggle_button" url="skin/ico_street_map_down.png" scale="0.5" align="righttop" x="0" y="0"
+			parent="map_container" zorder="2"
+			onclick="toggle_map_visibility();" />
 	</layer>
 
 	<!-- 更新地图位置标记 -->
@@ -59,6 +67,24 @@
 		);
 	</action>
 	
+	<!-- 切换地图可见性 -->
+	<action name="toggle_map_visibility">
+		set(map_expanded, calc(!map_expanded));
+		if(map_expanded,
+			<!-- 展开 -->
+			update_map_responsive_layout();
+			set(layer[map_image].visible, true);
+			if(scene[get(xml.scene)].map_x, set(layer[map_spot].visible, true));
+			set(layer[map_toggle_button].url, 'skin/ico_street_map_down.png');
+		,
+			<!-- 收起 -->
+			tween(layer[map_container].height, 30, 0.5);
+			set(layer[map_image].visible, false);
+			set(layer[map_spot].visible, false);
+			set(layer[map_toggle_button].url, 'skin/ico_street_map_up.png');
+		);
+	</action>
+
 	<!-- 响应式布局更新函数 -->
 	<action name="update_map_responsive_layout">
 		<!-- 获取当前视口尺寸 -->
@@ -105,11 +131,11 @@
 				set(layer[map_image].y, 0);
 			);
 		);
-		
+
 		<!-- 更新地图图片尺寸以匹配容器 -->
 		set(layer[map_image].width, get(layer[map_container].width));
 		set(layer[map_image].height, get(layer[map_container].height));
-		
+
 		<!-- 重新计算位置标记位置 -->
 		update_map_spot_position();
 	</action>

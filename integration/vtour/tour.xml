@@ -17,7 +17,7 @@
 		autotour="false"
 		littleplanetintro="false"
 		followmousecontrol="false"
-		title="true"
+		title="false"
 		thumbs="true"
 		thumbs_width="120" thumbs_height="80" thumbs_padding="10" thumbs_crop="0|40|240|160"
 		thumbs_opened="false"
@@ -40,8 +40,8 @@
 		layout_width="100%"
 		layout_maxwidth="814"
 		controlbar_width="-24"
-		controlbar_height="40"
-		controlbar_offset="20"
+		controlbar_height="0"
+		controlbar_offset="0"
 		controlbar_offset_closed="-40"
 		controlbar_overlap.no-fractionalscaling="10"
 		controlbar_overlap.fractionalscaling="0"
@@ -73,8 +73,7 @@
 	<include url="custom_map_system.xml" />
 	
 	<!-- 响应式布局事件监听 -->
-	<events onnewpano="update_map_spot_position();" onresize="update_map_responsive_layout();" />
-
+	<events onnewpano="update_map_spot_position();" onresize="update_map_responsive_layout();set(layer[skin_control_bar].visible, false); set(layer[skin_splitter_bottom].visible, false);" />
 
 	<scene name="scene_img_20250829_210831_00_629" title="IMG_20250829_210831_00_629"
 		thumburl="panos/IMG_20250829_210831_00_629.tiles/thumb.jpg" lat="24.43944444"
@@ -4556,8 +4555,5 @@
 			depth="1000.0" linkedscene="scene_img_20250829_210831_00_629" />
 
 	</scene>
-
-	<!-- 页面加载完成后初始化响应式布局 -->
-	<events onloadcomplete="update_map_responsive_layout();" />
 
 </krpano>

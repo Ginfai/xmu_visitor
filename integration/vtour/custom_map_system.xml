@@ -1,9 +1,11 @@
 <!-- 自定义地图系统 - 响应式布局 -->
-<krpano onstart="update_map_responsive_layout();">
+<krpano>
 
 
 	<!-- 地图展开/收起状态 -->
 	<variable name="map_expanded" type="boolean" value="true" />
+	<!-- 地图初始化状态 -->
+	<variable name="map_initialized" type="boolean" value="false" />
 	<!-- 自定义地图容器 -->
 	<layer name="map_container" keep="true" type="container" align="leftbottom" x="20" y="20"
 		width="400" height="300" bgalpha="0.7" border="2,0xFFFFFF,0.8">
@@ -67,9 +69,27 @@
 		);
 	</action>
 	
+	<!-- 初始化地图状态 -->
+	<action name="init_map_state">
+		if(calc(!map_initialized),
+			<!-- 首次初始化，确保地图处于展开状态 -->
+			set(map_expanded, true);
+			set(map_initialized, true);
+			update_map_responsive_layout();
+			set(layer[map_image].visible, true);
+			if(scene[get(xml.scene)].map_x, set(layer[map_spot].visible, true));
+			set(layer[map_toggle_button].url, 'skin/ico_street_map_down.png');
+		);
+	</action>
+
 	<!-- 切换地图可见性 -->
 	<action name="toggle_map_visibility">
+		<!-- 确保已初始化 -->
+		init_map_state();
+		
+		<!-- 切换状态 -->
 		set(map_expanded, calc(!map_expanded));
+		
 		if(map_expanded,
 			<!-- 展开 -->
 			update_map_responsive_layout();
@@ -78,6 +98,7 @@
 			set(layer[map_toggle_button].url, 'skin/ico_street_map_down.png');
 		,
 			<!-- 收起 -->
+			tween(layer[map_container].width, 30, 0.5);
 			tween(layer[map_container].height, 30, 0.5);
 			set(layer[map_image].visible, false);
 			set(layer[map_spot].visible, false);
@@ -90,51 +111,55 @@
 		<!-- 获取当前视口尺寸 -->
 		calc(screen_width, stagewidth);
 		calc(screen_height, stageheight);
-		
-		<!-- 定义响应式断点 -->
-		<!-- 移动设备 (宽度小于768px) -->
-		if(screen_width LT 768,
-			<!-- 移动设备布局 -->
-			set(layer[map_container].align, leftbottom);
-			set(layer[map_container].width, 250);
-			set(layer[map_container].height, 188);
-			set(layer[map_container].x, 10);
-			set(layer[map_container].y, 10);
-			<!-- 确保地图图片也跟随容器对齐 -->
-			set(layer[map_image].align, lefttop);
-			set(layer[map_image].x, 0);
-			set(layer[map_image].y, 0);
-		,
-			<!-- 平板设备 (宽度768px-1024px) -->
-			if(screen_width LT 1024,
-				<!-- 平板布局：中等尺寸，左下角对齐 -->
+
+		if(map_expanded,
+			<!-- 定义响应式断点 -->
+			<!-- 移动设备 (宽度小于768px) -->
+			if(screen_width LT 768,
+				<!-- 移动设备布局 -->
 				set(layer[map_container].align, leftbottom);
-				set(layer[map_container].width, 320);
-				set(layer[map_container].height, 240);
-				set(layer[map_container].x, 15);
-				set(layer[map_container].y, 15);
+				set(layer[map_container].width, 250);
+				set(layer[map_container].height, 188);
+				set(layer[map_container].x, 10);
+				set(layer[map_container].y, 10);
 				<!-- 确保地图图片也跟随容器对齐 -->
 				set(layer[map_image].align, leftbottom);
 				set(layer[map_image].x, 0);
 				set(layer[map_image].y, 0);
 			,
-				<!-- 桌面设备 (宽度大于1024px) -->
-				<!-- 桌面布局：原始尺寸，左下角对齐 -->
-				set(layer[map_container].align, leftbottom);
-				set(layer[map_container].width, 400);
-				set(layer[map_container].height, 300);
-				set(layer[map_container].x, 20);
-				set(layer[map_container].y, 20);
-				<!-- 确保地图图片也跟随容器对齐 -->
-				set(layer[map_image].align, leftbottom);
-				set(layer[map_image].x, 0);
-				set(layer[map_image].y, 0);
+				<!-- 平板设备 (宽度768px-1024px) -->
+				if(screen_width LT 1024,
+					<!-- 平板布局：中等尺寸，左下角对齐 -->
+					set(layer[map_container].align, leftbottom);
+					set(layer[map_container].width, 320);
+					set(layer[map_container].height, 240);
+					set(layer[map_container].x, 15);
+					set(layer[map_container].y, 15);
+					<!-- 确保地图图片也跟随容器对齐 -->
+					set(layer[map_image].align, leftbottom);
+					set(layer[map_image].x, 0);
+					set(layer[map_image].y, 0);
+				,
+					<!-- 桌面设备 (宽度大于1024px) -->
+					<!-- 桌面布局：原始尺寸，左下角对齐 -->
+					set(layer[map_container].align, leftbottom);
+					set(layer[map_container].width, 400);
+					set(layer[map_container].height, 300);
+					set(layer[map_container].x, 20);
+					set(layer[map_container].y, 20);
+					<!-- 确保地图图片也跟随容器对齐 -->
+					set(layer[map_image].align, leftbottom);
+					set(layer[map_image].x, 0);
+					set(layer[map_image].y, 0);
+				);
 			);
-		);
 
-		<!-- 更新地图图片尺寸以匹配容器 -->
-		set(layer[map_image].width, get(layer[map_container].width));
-		set(layer[map_image].height, get(layer[map_container].height));
+			<!-- 更新地图图片尺寸以匹配容器 -->
+			set(layer[map_image].width, get(layer[map_container].width));
+			set(layer[map_image].height, get(layer[map_container].height));
+		);
+		);
+		);
 
 		<!-- 重新计算位置标记位置 -->
 		update_map_spot_position();

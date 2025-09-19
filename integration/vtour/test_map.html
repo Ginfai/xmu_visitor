@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>地图系统测试</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body { margin: 0; padding: 20px; font-family: Arial, sans-serif; }
+        .info { background: #f0f0f0; padding: 10px; margin-bottom: 20px; border-radius: 5px; }
+        .test-container { width: 100%; height: 600px; border: 1px solid #ccc; }
+    </style>
+</head>
+<body>
+    <div class="info">
+        <h2>地图系统修复测试</h2>
+        <p><strong>修复内容：</strong></p>
+        <ul>
+            <li>添加了地图初始化状态变量 <code>map_initialized</code></li>
+            <li>创建了 <code>init_map_state()</code> 函数确保首次加载时地图状态正确</li>
+            <li>修改了 <code>toggle_map_visibility()</code> 函数，在切换前先确保初始化</li>
+            <li>在 <code>onnewpano</code> 事件中添加了初始化调用</li>
+        </ul>
+        <p><strong>预期行为：</strong></p>
+        <ul>
+            <li>首次加载：地图显示为正常大小，按钮显示向下箭头</li>
+            <li>第一次点击隐藏：地图收起为小尺寸（30x30），按钮显示向上箭头</li>
+            <li>第二次点击展开：地图恢复正常大小，按钮显示向下箭头</li>
+        </ul>
+    </div>
+    
+    <div class="test-container">
+        <script src="tour.js"></script>
+        <script>
+            embedpano({ xml: "tour.xml", passQueryParameters: "startscene,startlookat" });
+        </script>
+    </div>
+</body>
+</html>

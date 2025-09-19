@@ -1,0 +1,117 @@
+<!-- 自定义地图系统 - 响应式布局 -->
+<krpano>
+
+	<!-- 自定义地图容器 -->
+	<layer name="map_container" keep="true" type="container" align="leftbottom" x="20" y="20" 
+		width="400" height="300" bgalpha="0.7" border="2,0xFFFFFF,0.8">
+		
+		<!-- 地图图片 -->
+		<layer name="map_image" url="skin/xm_visitor.png" align="leftbottom" x="0" y="0" width="400"
+			height="300" scale="1.0" />
+
+		<!-- 位置标记 -->
+		<layer name="map_spot" url="skin/ic_track_origin.png" align="lefttop"
+			parent="map_container" x="0" y="0" visible="false" scale="0.5" />
+	</layer>
+
+	<!-- 更新地图位置标记 -->
+	<action name="update_map_spot_position">
+		<!-- 检查当前场景是否有地图坐标数据 -->
+		if(scene[get(xml.scene)].map_x,
+			<!-- 定义地图图片的原始尺寸（PS中的实际尺寸） -->
+			set(map_original_width, 400);  
+			set(map_original_height, 300);
+			
+			<!-- 计算坐标缩放比例 -->
+			calc(scale_x, layer[map_container].width / map_original_width);
+			calc(scale_y, layer[map_container].height / map_original_height);
+			
+			<!-- 将PS坐标转换为krpano坐标 -->
+			calc(map_relative_x, scene[get(xml.scene)].map_x * scale_x);
+			calc(map_relative_y, scene[get(xml.scene)].map_y * scale_y);
+			
+			<!-- 调整标记位置（考虑标记本身的中心点偏移） -->
+			<!-- 标记图片的中心点偏移，根据实际标记图片调整 -->
+			calc(spot_offset_x, layer[map_spot].width * layer[map_spot].scale / 2.4);
+			calc(spot_offset_y, layer[map_spot].height * layer[map_spot].scale /1.9);
+			
+			<!-- 最终位置 = 计算位置 - 标记中心偏移 -->
+			calc(final_x, map_relative_x - spot_offset_x);
+			calc(final_y, map_relative_y - spot_offset_y);
+			
+			<!-- 设置位置标记坐标 -->
+			set(layer[map_spot].x, get(final_x));
+			set(layer[map_spot].y, get(final_y));
+			
+			<!-- 根据容器大小调整标记缩放 -->
+			calc(spot_scale, layer[map_container].width / map_original_width * 0.5);
+			set(layer[map_spot].scale, get(spot_scale));
+			
+			<!-- 显示位置标记 -->
+			set(layer[map_spot].visible, true);
+			
+			<!-- 调试信息（可选，用于调试坐标） -->
+			<!-- trace('Map coordinates: ', scene[get(xml.scene)].map_x, ', ', scene[get(xml.scene)].map_y); -->
+			<!-- trace('Calculated position: ', final_x, ', ', final_y); -->
+		,
+			<!-- 如果没有地图坐标数据，隐藏位置标记 -->
+			set(layer[map_spot].visible, false);
+		);
+	</action>
+	
+	<!-- 响应式布局更新函数 -->
+	<action name="update_map_responsive_layout">
+		<!-- 获取当前视口尺寸 -->
+		calc(screen_width, stagewidth);
+		calc(screen_height, stageheight);
+		
+		<!-- 定义响应式断点 -->
+		<!-- 移动设备 (宽度小于768px) -->
+		if(screen_width LT 768,
+			<!-- 移动设备布局 -->
+			set(layer[map_container].align, leftbottom);
+			set(layer[map_container].width, 250);
+			set(layer[map_container].height, 188);
+			set(layer[map_container].x, 10);
+			set(layer[map_container].y, 10);
+			<!-- 确保地图图片也跟随容器对齐 -->
+			set(layer[map_image].align, lefttop);
+			set(layer[map_image].x, 0);
+			set(layer[map_image].y, 0);
+		,
+			<!-- 平板设备 (宽度768px-1024px) -->
+			if(screen_width LT 1024,
+				<!-- 平板布局：中等尺寸，左下角对齐 -->
+				set(layer[map_container].align, leftbottom);
+				set(layer[map_container].width, 320);
+				set(layer[map_container].height, 240);
+				set(layer[map_container].x, 15);
+				set(layer[map_container].y, 15);
+				<!-- 确保地图图片也跟随容器对齐 -->
+				set(layer[map_image].align, leftbottom);
+				set(layer[map_image].x, 0);
+				set(layer[map_image].y, 0);
+			,
+				<!-- 桌面设备 (宽度大于1024px) -->
+				<!-- 桌面布局：原始尺寸，左下角对齐 -->
+				set(layer[map_container].align, leftbottom);
+				set(layer[map_container].width, 400);
+				set(layer[map_container].height, 300);
+				set(layer[map_container].x, 20);
+				set(layer[map_container].y, 20);
+				<!-- 确保地图图片也跟随容器对齐 -->
+				set(layer[map_image].align, leftbottom);
+				set(layer[map_image].x, 0);
+				set(layer[map_image].y, 0);
+			);
+		);
+		
+		<!-- 更新地图图片尺寸以匹配容器 -->
+		set(layer[map_image].width, get(layer[map_container].width));
+		set(layer[map_image].height, get(layer[map_container].height));
+		
+		<!-- 重新计算位置标记位置 -->
+		update_map_spot_position();
+	</action>
+
+</krpano>

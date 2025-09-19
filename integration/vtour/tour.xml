@@ -69,121 +69,11 @@
 	<!-- <include url="skin/vtourskin_design_117round.xml"    /> -->
 	<!-- <include url="skin/vtourskin_design_black.xml"       /> -->
 
-	<!-- 自定义地图系统 - 响应式布局 -->
-	<layer name="map_container" keep="true" type="container" align="leftbottom" x="20" y="20" 
-		width="400" height="300" bgalpha="0.7" border="2,0xFFFFFF,0.8">
-		<!-- 加载您的地图图片 -->
-		<layer name="map_image" url="skin/xm_visitor.png" align="leftbottom" x="0" y="0" width="400"
-			height="300" scale="1.0" />
-
-		<!-- 添加位置标记 (使用krpano自带的红色圆点图标) -->
-		<layer name="map_spot" url="skin/vtourskin_mapspot.png" align="lefttop"
-			parent="map_container" x="0" y="0" visible="false" scale="0.5" />
-	</layer>
-
+	<!-- 自定义地图系统 -->
+	<include url="custom_map_system.xml" />
+	
 	<!-- 响应式布局事件监听 -->
 	<events onnewpano="update_map_spot_position();" onresize="update_map_responsive_layout();" />
-	
-	<!-- 更新地图位置标记 -->
-	<action name="update_map_spot_position">
-		<!-- 检查当前场景是否有地图坐标数据 -->
-		if(scene[get(xml.scene)].map_x,
-			<!-- 定义地图图片的原始尺寸（PS中的实际尺寸） -->
-			<!-- 请根据您的PS地图图片实际尺寸修改这些值 -->
-			set(map_original_width, 400);  <!-- PS中地图图片的宽度 -->
-			set(map_original_height, 300); <!-- PS中地图图片的高度 -->
-			
-			<!-- 计算坐标缩放比例 -->
-			calc(scale_x, layer[map_container].width / map_original_width);
-			calc(scale_y, layer[map_container].height / map_original_height);
-			
-			<!-- 将PS坐标转换为krpano坐标 -->
-			calc(map_relative_x, scene[get(xml.scene)].map_x * scale_x);
-			calc(map_relative_y, scene[get(xml.scene)].map_y * scale_y);
-			
-			<!-- 调整标记位置（考虑标记本身的中心点偏移） -->
-			<!-- 标记图片的中心点偏移，根据实际标记图片调整 -->
-			calc(spot_offset_x, layer[map_spot].width * layer[map_spot].scale / 2.4);
-			calc(spot_offset_y, layer[map_spot].height * layer[map_spot].scale / 1.2);
-			
-			<!-- 最终位置 = 计算位置 - 标记中心偏移 -->
-			calc(final_x, map_relative_x - spot_offset_x);
-			calc(final_y, map_relative_y - spot_offset_y);
-			
-			<!-- 设置位置标记坐标 -->
-			set(layer[map_spot].x, get(final_x));
-			set(layer[map_spot].y, get(final_y));
-			
-			<!-- 根据容器大小调整标记缩放 -->
-			calc(spot_scale, layer[map_container].width / map_original_width * 0.5);
-			set(layer[map_spot].scale, get(spot_scale));
-			
-			<!-- 显示位置标记 -->
-			set(layer[map_spot].visible, true);
-			
-			<!-- 调试信息（可选，用于调试坐标） -->
-			<!-- trace('Map coordinates: ', scene[get(xml.scene)].map_x, ', ', scene[get(xml.scene)].map_y); -->
-			<!-- trace('Calculated position: ', final_x, ', ', final_y); -->
-		,
-			<!-- 如果没有地图坐标数据，隐藏位置标记 -->
-			set(layer[map_spot].visible, false);
-		);
-	</action>
-	
-	<!-- 响应式布局更新函数 -->
-	<action name="update_map_responsive_layout">
-		<!-- 获取当前视口尺寸 -->
-		calc(screen_width, stagewidth);
-		calc(screen_height, stageheight);
-		
-		<!-- 定义响应式断点 -->
-		<!-- 移动设备 (宽度小于768px) -->
-		if(screen_width LT 768,
-			<!-- 移动设备布局：较小尺寸，强制左上角对齐 -->
-			set(layer[map_container].align, leftbottom);
-			set(layer[map_container].width, 250);
-			set(layer[map_container].height, 188);
-			set(layer[map_container].x, 10);
-			set(layer[map_container].y, 10);
-			<!-- 确保地图图片也跟随容器对齐 -->
-			set(layer[map_image].align, lefttop);
-			set(layer[map_image].x, 0);
-			set(layer[map_image].y, 0);
-		,
-			<!-- 平板设备 (宽度768px-1024px) -->
-			if(screen_width LT 1024,
-				<!-- 平板布局：中等尺寸，左下角对齐 -->
-				set(layer[map_container].align, leftbottom);
-				set(layer[map_container].width, 320);
-				set(layer[map_container].height, 240);
-				set(layer[map_container].x, 15);
-				set(layer[map_container].y, 15);
-				<!-- 确保地图图片也跟随容器对齐 -->
-				set(layer[map_image].align, leftbottom);
-				set(layer[map_image].x, 0);
-				set(layer[map_image].y, 0);
-			,
-				<!-- 桌面设备 (宽度大于1024px) -->
-				<!-- 桌面布局：原始尺寸，左下角对齐 -->
-				set(layer[map_container].align, leftbottom);
-				set(layer[map_container].width, 400);
-				set(layer[map_container].height, 300);
-				set(layer[map_container].x, 20);
-				set(layer[map_container].y, 20);
-				<!-- 确保地图图片也跟随容器对齐 -->
-				set(layer[map_image].align, leftbottom);
-				set(layer[map_image].x, 0);
-				set(layer[map_image].y, 0);
-			);
-		);
-		
-		<!-- 更新地图图片尺寸以匹配容器 -->
-		set(layer[map_image].width, get(layer[map_container].width));
-		set(layer[map_image].height, get(layer[map_container].height));
-		
-		<!-- 重新计算位置标记位置 -->
-		update_map_spot_position();
-	</action>
 
 
 	<scene name="scene_img_20250829_210831_00_629" title="IMG_20250829_210831_00_629"
@@ -210,7 +100,7 @@
 
 	<scene name="scene_IMG_20250829_172737_00_322" title="IMG_20250829_172737_00_322" onstart=""
 		thumburl="panos/IMG_20250829_172737_00_322.tiles/thumb.jpg" lat="24.43769444"
-		lng="118.09063889" alt="10.60" heading="0.0">
+		lng="118.09063889" alt="10.60" heading="0.0" map_x="350" map_y="182">
 
 		<control bouncinglimits="calc:image.cube ? true : false" />
 
@@ -233,7 +123,7 @@
 
 	<scene name="scene_IMG_20250829_172737_00_326" title="IMG_20250829_172737_00_326" onstart=""
 		thumburl="panos/IMG_20250829_172737_00_326.tiles/thumb.jpg" lat="-0.00000000"
-		lng="-0.00000000" alt="0.00" heading="0.0">
+		lng="-0.00000000" alt="0.00" heading="0.0" map_x="350" map_y="173.3">
 
 		<control bouncinglimits="calc:image.cube ? true : false" />
 
@@ -259,7 +149,7 @@
 
 	<scene name="scene_IMG_20250829_172737_00_327" title="IMG_20250829_172737_00_327" onstart=""
 		thumburl="panos/IMG_20250829_172737_00_327.tiles/thumb.jpg" lat="-0.00000000"
-		lng="-0.00000000" alt="0.00" heading="0.0">
+		lng="-0.00000000" alt="0.00" heading="0.0" map_x="350" map_y="164.6">
 
 		<control bouncinglimits="calc:image.cube ? true : false" />
 
@@ -285,7 +175,7 @@
 
 	<scene name="scene_IMG_20250829_172737_00_328" title="IMG_20250829_172737_00_328" onstart=""
 		thumburl="panos/IMG_20250829_172737_00_328.tiles/thumb.jpg" lat="-0.00000000"
-		lng="-0.00000000" alt="0.00" heading="0.0">
+		lng="-0.00000000" alt="0.00" heading="0.0" map_x="350" map_y="155.9">
 
 		<control bouncinglimits="calc:image.cube ? true : false" />
 
@@ -311,7 +201,7 @@
 
 	<scene name="scene_IMG_20250829_172737_00_329" title="IMG_20250829_172737_00_329" onstart=""
 		thumburl="panos/IMG_20250829_172737_00_329.tiles/thumb.jpg" lat="-0.00000000"
-		lng="-0.00000000" alt="0.00" heading="0.0">
+		lng="-0.00000000" alt="0.00" heading="0.0" map_x="350" map_y="147.2">
 
 		<control bouncinglimits="calc:image.cube ? true : false" />
 
@@ -337,7 +227,7 @@
 
 	<scene name="scene_IMG_20250829_172737_00_330" title="IMG_20250829_172737_00_330" onstart=""
 		thumburl="panos/IMG_20250829_172737_00_330.tiles/thumb.jpg" lat="-0.00000000"
-		lng="-0.00000000" alt="0.00" heading="0.0">
+		lng="-0.00000000" alt="0.00" heading="0.0" map_x="350" map_y="138.5">
 
 		<control bouncinglimits="calc:image.cube ? true : false" />
 
@@ -363,7 +253,7 @@
 
 	<scene name="scene_IMG_20250829_172737_00_331" title="IMG_20250829_172737_00_331" onstart=""
 		thumburl="panos/IMG_20250829_172737_00_331.tiles/thumb.jpg" lat="-0.00000000"
-		lng="-0.00000000" alt="0.00" heading="0.0">
+		lng="-0.00000000" alt="0.00" heading="0.0" map_x="350" map_y="129.8">
 
 		<control bouncinglimits="calc:image.cube ? true : false" />
 
@@ -389,7 +279,7 @@
 
 	<scene name="scene_IMG_20250829_172737_00_332" title="IMG_20250829_172737_00_332" onstart=""
 		thumburl="panos/IMG_20250829_172737_00_332.tiles/thumb.jpg" lat="-0.00000000"
-		lng="-0.00000000" alt="0.00" heading="0.0">
+		lng="-0.00000000" alt="0.00" heading="0.0" map_x="350" map_y="121.1">
 
 		<control bouncinglimits="calc:image.cube ? true : false" />
 
@@ -417,7 +307,7 @@
 
 	<scene name="scene_IMG_20250829_173851_00_345" title="IMG_20250829_173851_00_345" onstart=""
 		thumburl="panos/IMG_20250829_173851_00_345.tiles/thumb.jpg" lat="-0.00000000"
-		lng="-0.00000000" alt="0.00" heading="0.0">
+		lng="-0.00000000" alt="0.00" heading="0.0" map_x="354" map_y="116">
 
 		<control bouncinglimits="calc:image.cube ? true : false" />
 
@@ -446,7 +336,7 @@
 
 	<scene name="scene_IMG_20250829_173851_00_346" title="IMG_20250829_173851_00_346" onstart=""
 		thumburl="panos/IMG_20250829_173851_00_346.tiles/thumb.jpg" lat="-0.00000000"
-		lng="-0.00000000" alt="0.00" heading="0.0">
+		lng="-0.00000000" alt="0.00" heading="0.0" map_x="354" map_y="111.9">
 
 		<control bouncinglimits="calc:image.cube ? true : false" />
 
@@ -471,7 +361,7 @@
 
 	<scene name="scene_IMG_20250829_173851_00_347" title="IMG_20250829_173851_00_347" onstart=""
 		thumburl="panos/IMG_20250829_173851_00_347.tiles/thumb.jpg" lat="-0.00000000"
-		lng="-0.00000000" alt="0.00" heading="0.0">
+		lng="-0.00000000" alt="0.00" heading="0.0" map_x="354" map_y="107.8">
 
 		<control bouncinglimits="calc:image.cube ? true : false" />
 
@@ -496,7 +386,7 @@
 
 	<scene name="scene_IMG_20250829_173851_00_348" title="IMG_20250829_173851_00_348" onstart=""
 		thumburl="panos/IMG_20250829_173851_00_348.tiles/thumb.jpg" lat="-0.00000000"
-		lng="-0.00000000" alt="0.00" heading="0.0">
+		lng="-0.00000000" alt="0.00" heading="0.0" map_x="354" map_y="103.7">
 
 		<control bouncinglimits="calc:image.cube ? true : false" />
 
@@ -521,7 +411,7 @@
 
 	<scene name="scene_IMG_20250829_173851_00_349" title="IMG_20250829_173851_00_349" onstart=""
 		thumburl="panos/IMG_20250829_173851_00_349.tiles/thumb.jpg" lat="-0.00000000"
-		lng="-0.00000000" alt="0.00" heading="0.0">
+		lng="-0.00000000" alt="0.00" heading="0.0" map_x="354" map_y="99.6">
 
 		<control bouncinglimits="calc:image.cube ? true : false" />
 
@@ -546,7 +436,7 @@
 
 	<scene name="scene_IMG_20250829_173851_00_350" title="IMG_20250829_173851_00_350" onstart=""
 		thumburl="panos/IMG_20250829_173851_00_350.tiles/thumb.jpg" lat="-0.00000000"
-		lng="-0.00000000" alt="0.00" heading="0.0">
+		lng="-0.00000000" alt="0.00" heading="0.0" map_x="354" map_y="95.5">
 
 		<control bouncinglimits="calc:image.cube ? true : false" />
 
@@ -571,7 +461,7 @@
 
 	<scene name="scene_IMG_20250829_173851_00_351" title="IMG_20250829_173851_00_351" onstart=""
 		thumburl="panos/IMG_20250829_173851_00_351.tiles/thumb.jpg" lat="-0.00000000"
-		lng="-0.00000000" alt="0.00" heading="0.0">
+		lng="-0.00000000" alt="0.00" heading="0.0" map_x="354" map_y="91.4">
 
 		<control bouncinglimits="calc:image.cube ? true : false" />
 
@@ -596,7 +486,7 @@
 
 	<scene name="scene_IMG_20250829_173851_00_352" title="IMG_20250829_173851_00_352" onstart=""
 		thumburl="panos/IMG_20250829_173851_00_352.tiles/thumb.jpg" lat="-0.00000000"
-		lng="-0.00000000" alt="0.00" heading="0.0">
+		lng="-0.00000000" alt="0.00" heading="0.0" map_x="354" map_y="87.3">
 
 		<control bouncinglimits="calc:image.cube ? true : false" />
 
@@ -621,7 +511,7 @@
 
 	<scene name="scene_IMG_20250829_173851_00_353" title="IMG_20250829_173851_00_353" onstart=""
 		thumburl="panos/IMG_20250829_173851_00_353.tiles/thumb.jpg" lat="-0.00000000"
-		lng="-0.00000000" alt="0.00" heading="0.0">
+		lng="-0.00000000" alt="0.00" heading="0.0" map_x="354" map_y="83.2">
 
 		<control bouncinglimits="calc:image.cube ? true : false" />
 
@@ -646,7 +536,7 @@
 
 	<scene name="scene_IMG_20250829_173851_00_354" title="IMG_20250829_173851_00_354" onstart=""
 		thumburl="panos/IMG_20250829_173851_00_354.tiles/thumb.jpg" lat="-0.00000000"
-		lng="-0.00000000" alt="0.00" heading="0.0">
+		lng="-0.00000000" alt="0.00" heading="0.0" map_x="354" map_y="79.1">
 
 		<control bouncinglimits="calc:image.cube ? true : false" />
 
@@ -671,7 +561,7 @@
 
 	<scene name="scene_IMG_20250829_173851_00_355" title="IMG_20250829_173851_00_355" onstart=""
 		thumburl="panos/IMG_20250829_173851_00_355.tiles/thumb.jpg" lat="-0.00000000"
-		lng="-0.00000000" alt="0.00" heading="0.0">
+		lng="-0.00000000" alt="0.00" heading="0.0" map_x="354" map_y="75.0">
 
 		<control bouncinglimits="calc:image.cube ? true : false" />
 
@@ -696,7 +586,7 @@
 
 	<scene name="scene_IMG_20250829_173851_00_356" title="IMG_20250829_173851_00_356" onstart=""
 		thumburl="panos/IMG_20250829_173851_00_356.tiles/thumb.jpg" lat="-0.00000000"
-		lng="-0.00000000" alt="0.00" heading="0.0">
+		lng="-0.00000000" alt="0.00" heading="0.0" map_x="354" map_y="70.9">
 
 		<control bouncinglimits="calc:image.cube ? true : false" />
 
@@ -721,7 +611,7 @@
 
 	<scene name="scene_IMG_20250829_173851_00_357" title="IMG_20250829_173851_00_357" onstart=""
 		thumburl="panos/IMG_20250829_173851_00_357.tiles/thumb.jpg" lat="-0.00000000"
-		lng="-0.00000000" alt="0.00" heading="0.0">
+		lng="-0.00000000" alt="0.00" heading="0.0" map_x="354" map_y="66.8">
 
 		<control bouncinglimits="calc:image.cube ? true : false" />
 
@@ -746,7 +636,7 @@
 
 	<scene name="scene_IMG_20250829_173851_00_358" title="IMG_20250829_173851_00_358" onstart=""
 		thumburl="panos/IMG_20250829_173851_00_358.tiles/thumb.jpg" lat="-0.00000000"
-		lng="-0.00000000" alt="0.00" heading="0.0">
+		lng="-0.00000000" alt="0.00" heading="0.0" map_x="347" map_y="64">
 
 		<control bouncinglimits="calc:image.cube ? true : false" />
 
@@ -771,7 +661,7 @@
 
 	<scene name="scene_IMG_20250829_173851_00_359" title="IMG_20250829_173851_00_359" onstart=""
 		thumburl="panos/IMG_20250829_173851_00_359.tiles/thumb.jpg" lat="-0.00000000"
-		lng="-0.00000000" alt="0.00" heading="0.0">
+		lng="-0.00000000" alt="0.00" heading="0.0" map_x="345.2" map_y="64">
 
 		<control bouncinglimits="calc:image.cube ? true : false" />
 
@@ -796,7 +686,7 @@
 
 	<scene name="scene_IMG_20250829_173851_00_360" title="IMG_20250829_173851_00_360" onstart=""
 		thumburl="panos/IMG_20250829_173851_00_360.tiles/thumb.jpg" lat="-0.00000000"
-		lng="-0.00000000" alt="0.00" heading="0.0">
+		lng="-0.00000000" alt="0.00" heading="0.0" map_x="343.4" map_y="64">
 
 		<control bouncinglimits="calc:image.cube ? true : false" />
 
@@ -821,7 +711,7 @@
 
 	<scene name="scene_IMG_20250829_173851_00_361" title="IMG_20250829_173851_00_361" onstart=""
 		thumburl="panos/IMG_20250829_173851_00_361.tiles/thumb.jpg" lat="-0.00000000"
-		lng="-0.00000000" alt="0.00" heading="0.0">
+		lng="-0.00000000" alt="0.00" heading="0.0" map_x="341.6" map_y="64">
 
 		<control bouncinglimits="calc:image.cube ? true : false" />
 
@@ -846,7 +736,7 @@
 
 	<scene name="scene_IMG_20250829_173851_00_362" title="IMG_20250829_173851_00_362" onstart=""
 		thumburl="panos/IMG_20250829_173851_00_362.tiles/thumb.jpg" lat="-0.00000000"
-		lng="-0.00000000" alt="0.00" heading="0.0">
+		lng="-0.00000000" alt="0.00" heading="0.0" map_x="339.8" map_y="64">
 
 		<control bouncinglimits="calc:image.cube ? true : false" />
 
@@ -871,7 +761,7 @@
 
 	<scene name="scene_IMG_20250829_173851_00_363" title="IMG_20250829_173851_00_363" onstart=""
 		thumburl="panos/IMG_20250829_173851_00_363.tiles/thumb.jpg" lat="-0.00000000"
-		lng="-0.00000000" alt="0.00" heading="0.0">
+		lng="-0.00000000" alt="0.00" heading="0.0" map_x="338.0" map_y="64">
 
 		<control bouncinglimits="calc:image.cube ? true : false" />
 
@@ -896,7 +786,7 @@
 
 	<scene name="scene_IMG_20250829_173851_00_364" title="IMG_20250829_173851_00_364" onstart=""
 		thumburl="panos/IMG_20250829_173851_00_364.tiles/thumb.jpg" lat="-0.00000000"
-		lng="-0.00000000" alt="0.00" heading="0.0">
+		lng="-0.00000000" alt="0.00" heading="0.0" map_x="336.2" map_y="64">
 
 		<control bouncinglimits="calc:image.cube ? true : false" />
 

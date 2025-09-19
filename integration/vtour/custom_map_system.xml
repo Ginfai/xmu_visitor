@@ -1,7 +1,6 @@
 <!-- 自定义地图系统 - 响应式布局 -->
 <krpano>
 
-
 	<!-- 地图展开/收起状态 -->
 	<variable name="map_expanded" type="boolean" value="true" />
 	<!-- 地图初始化状态 -->

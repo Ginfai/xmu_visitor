@@ -1,2 +1,14 @@
 对于交互性强的页面，单独创建html页面，而不去使用krpano的xml文件
 把数据集从scene_data.js整合到tour.xml当中，方便后期的数据管理
+接下来我们需要实现规划路径的功能，通过
+  @integration\vtour\search_panel.html
+  输入的起点和终点，将规划好的路径显示在
+  @integration\vtour\custom_map_system.xml       
+  上面，目前我们的数据存在 @integration\vtour\r  
+  oute_planning\scene_data.js 里面，但是我们的   
+  @integration\vtour\tour.xml
+  里面已经有必须的几种数据，所以我考虑将 @integ  
+  ration\vtour\route_planning\scene_data.js      
+  里面的数据整合到 @integration\vtour\tour.xml   
+  里面，在以后的开发中，地点的数据也只需要维护   
+  这一个文件。我们可以讨论一下实现方案

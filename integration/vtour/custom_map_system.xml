@@ -5,6 +5,10 @@
 	<variable name="map_expanded" type="boolean" value="true" />
 	<!-- 地图初始化状态 -->
 	<variable name="map_initialized" type="boolean" value="false" />
+	<!-- 路线显示状态 -->
+	<variable name="route_visible" type="boolean" value="false" />
+	<!-- 路线数据 -->
+	<variable name="route_data" type="string" value="" />
 	<!-- 自定义地图容器 -->
 	<layer name="map_container" keep="true" type="container" align="leftbottom" x="20" y="20"
 		width="400" height="300" bgalpha="0.7" border="2,0xFFFFFF,0.8">
@@ -16,6 +20,18 @@
 		<!-- 位置标记 -->
 		<layer name="map_spot" url="skin/ic_track_origin.png" align="lefttop"
 			parent="map_container" x="0" y="0" visible="false" scale="0.5" zorder="1" />
+
+		<!-- 路线路径层 -->
+		<layer name="route_path_container" parent="map_container" align="lefttop" x="0" y="0" 
+			width="100%" height="100%" bgalpha="0.0" visible="false" zorder="2" />
+
+		<!-- 起点标记 -->
+		<layer name="route_start_marker" url="skin/ic_track_origin.png" align="lefttop"
+			parent="map_container" x="0" y="0" visible="false" scale="0.6" zorder="3" />
+
+		<!-- 终点标记 -->
+		<layer name="route_end_marker" url="skin/ic_track_origin.png" align="lefttop"
+			parent="map_container" x="0" y="0" visible="false" scale="0.6" zorder="3" />
 
 		<!-- 展开/收起按钮 -->
 		<layer name="map_toggle_button" url="skin/ico_street_map_down.png" scale="0.5" align="righttop" x="0" y="0"
@@ -193,6 +209,40 @@
 		if(map_initialized,
 			<!-- 延迟一点时间确保布局完全应用 -->
 			delayedcall(0.05, update_map_spot_position());
+		);
+	</action>
+
+	<!-- 显示路线在地图上 -->
+	<action name="show_route_on_map">
+		<!-- 参数: %1=路线数据JSON字符串 -->
+		if(%1 != '',
+			set(route_data, %1);
+			set(route_visible, true);
+			
+			<!-- 解析路线数据并显示路径 -->
+			js(parseAndShowRoute(get(route_data)));
+		);
+	</action>
+
+	<!-- 清除地图上的路线 -->
+	<action name="clear_route_on_map">
+		set(route_visible, false);
+		set(route_data, '');
+		
+		<!-- 隐藏路线相关层 -->
+		set(layer[route_path_container].visible, false);
+		set(layer[route_start_marker].visible, false);
+		set(layer[route_end_marker].visible, false);
+		
+		<!-- 清除路径线条 -->
+		js(clearRouteLines());
+	</action>
+
+	<!-- 更新路线标记位置 -->
+	<action name="update_route_markers">
+		<!-- 检查是否有路线数据 -->
+		if(route_visible AND route_data != '',
+			js(updateRouteMarkersPosition(get(route_data)));
 		);
 	</action>
 

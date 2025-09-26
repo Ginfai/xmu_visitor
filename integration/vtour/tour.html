@@ -9,6 +9,12 @@
 	<meta name="apple-mobile-web-app-status-bar-style" content="black" />
 	<meta name="mobile-web-app-capable" content="yes" />
 	<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+	
+	<!-- 路线规划面板样式 -->
+	<link rel="stylesheet" href="route_planning/css/route-panel.css">
+	<!-- 搜索面板样式 -->
+	<link rel="stylesheet" href="search_panel.css">
+	
 	<style>
 		html {
 			height: 100%;
@@ -30,6 +36,13 @@
 <body>
 
 	<script src="tour.js"></script>
+	<!-- 场景数据 -->
+	<script src="route_planning/scene_data.js"></script>
+	<!-- krpano集成脚本 -->
+	<script src="krpano-integration.js"></script>
+
+	<!-- UI容器 -->
+	<div id="ui-container"></div>
 
 	<div style="width:100%;height:100%;">
 		<noscript>
@@ -40,7 +53,16 @@
 			</table>
 		</noscript>
 		<script>
-			embedpano({ xml: "tour.xml", passQueryParameters: "startscene,startlookat" });
+			embedpano({ 
+				xml: "tour.xml", 
+				passQueryParameters: "startscene,startlookat",
+				onready: function(krpano_interface) {
+					// krpano加载完成后初始化集成
+					if (window.krpanoIntegration && window.krpanoIntegration.init) {
+						window.krpanoIntegration.init(krpano_interface);
+					}
+				}
+			});
 		</script>
 	</div>
 

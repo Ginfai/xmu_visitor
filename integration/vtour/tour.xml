@@ -2,7 +2,8 @@
 
 	<include url="skin/vtourskin.xml" />
 
-	<!-- customize skin settings: maps, gyro, webvr, thumbnails, tooltips, layout, design, ... -->
+	<!-- customize skin settings: maps, gyro, webvr, thumbnails, tooltips, layout, design,
+	 controlbar的显示隐藏 controlbar_height="30"  controlbar_offset="24" ... -->
 	<skin_settings maps="true"
 		maps_type="google"
 		maps_bing_api_key=""
@@ -17,11 +18,11 @@
 		autotour="false"
 		littleplanetintro="false"
 		followmousecontrol="false"
-		title="false"
+		title="true"
 		thumbs="true"
 		thumbs_width="120" thumbs_height="80" thumbs_padding="10" thumbs_crop="0|40|240|160"
 		thumbs_opened="false"
-		thumbs_text="false"
+		thumbs_text="true"
 		thumbs_dragging="true"
 		thumbs_onhoverscrolling="false"
 		thumbs_scrollbuttons="false"
@@ -40,8 +41,8 @@
 		layout_width="100%"
 		layout_maxwidth="814"
 		controlbar_width="-24"
-		controlbar_height="0"
-		controlbar_offset="0"
+		controlbar_height="30"
+		controlbar_offset="24"
 		controlbar_offset_closed="-40"
 		controlbar_overlap.no-fractionalscaling="10"
 		controlbar_overlap.fractionalscaling="0"
@@ -72,11 +73,26 @@
 	<!-- 自定义地图系统 -->
 	<include url="custom_map_system.xml" />
 	
+	<!-- 搜索面板系统 -->
+	<include url="search_panel_system.xml" />
+	
 	<!-- 优化后的事件监听器 -->
-	<events 
-		onnewpano="init_map_on_scene_load();" 
-		onresize="resize_map_layout();set(layer[skin_control_bar].visible, false); set(layer[skin_splitter_bottom].visible, false);" 
+	<events
+		onnewpano="init_map_on_scene_load(); update_current_scene(get(xml.scene));"
+		onresize="resize_map_layout();"
 	/>
+
+	<!-- 覆盖默认的皮肤启动行为，防止显示UI元素导致点击问题 -->
+	<action name="skin_startup">
+		 <!-- 调用默认的皮肤启动，但隐藏控制栏 -->
+		 skin_addthumbs();
+		 skin_onresize();
+		 skin_updatethumbsview(false);
+		 
+		 <!-- 隐藏控制栏 -->
+		 set(layer[skin_control_bar].visible, true);
+		 set(layer[skin_splitter_bottom].visible, true);
+	</action>
 
 	<scene name="scene_img_20250829_210831_00_629" title="IMG_20250829_210831_00_629"
 		thumburl="panos/IMG_20250829_210831_00_629.tiles/thumb.jpg" lat="24.43944444"

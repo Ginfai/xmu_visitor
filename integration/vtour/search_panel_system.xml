@@ -1,0 +1,14 @@
+<!-- 搜索与路线规划面板系统 -
+  Refactored for HTML UI -->
+<krpano>
+
+    <!-- 搜索面板的触发按钮 -->
+    <layer name="open_search_button"
+        keep="true"
+        url="skin/ico_street_map_down.png"
+        scale="0.5" align="righttop" x="15"
+        y="15"
+        onclick="js(krpanoIntegration.toggleHtmlSearchPanel());"
+        zorder="100" />
+
+</krpano>

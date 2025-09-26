@@ -1,0 +1,2 @@
+对于交互性强的页面，单独创建html页面，而不去使用krpano的xml文件
+把数据集从scene_data.js整合到tour.xml当中，方便后期的数据管理

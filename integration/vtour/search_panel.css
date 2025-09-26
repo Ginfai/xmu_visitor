@@ -1,0 +1,98 @@
+.search-panel-container {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 280px;
+    background-color: rgba(45, 62, 80, 0.85);
+    color: #FFFFFF;
+    border-radius: 5px;
+    padding: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    font-family: Arial, sans-serif;
+    z-index: 10000; /* High z-index to ensure it's on top of krpano */
+    display: none; /* Initially hidden */
+}
+
+.search-panel-container h3 {
+    margin-top: 0;
+    text-align: center;
+    font-size: 16px;
+}
+
+.input-group {
+    display: flex;
+    align-items: center;
+}
+
+.input-group label {
+    flex: 0 0 50px; /* Fixed width for labels */
+    font-size: 14px;
+}
+
+.input-group input {
+    flex: 1;
+    padding: 8px;
+    background-color: rgba(0, 0, 0, 0.3);
+    border: 1px solid #555;
+    color: #FFFFFF;
+    border-radius: 3px;
+}
+
+.search-panel-container button {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    border: none;
+    border-radius: 3px;
+    color: #FFFFFF;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+#plan-route-btn {
+    background-color: #4CAF50;
+}
+
+#plan-route-btn:hover {
+    background-color: #45a049;
+}
+
+#close-panel-btn {
+    background-color: #f44336;
+}
+
+#close-panel-btn:hover {
+    background-color: #da190b;
+}
+
+/* Styles for autocomplete functionality */
+.input-wrapper {
+    position: relative; /* Positioning context for the suggestions */
+    margin-bottom: 10px;
+}
+
+.autocomplete-suggestions {
+    display: none; /* Hidden by default */
+    position: absolute;
+    top: 100%; /* Position it right below the input group */
+    left: 50px; /* Align with the input field (label width) */
+    right: 0;
+    background-color: rgba(60, 80, 100, 0.95);
+    border: 1px solid #777;
+    border-top: none;
+    border-radius: 0 0 3px 3px;
+    z-index: 10001; /* Must be higher than the panel */
+    max-height: 150px;
+    overflow-y: auto;
+}
+
+.autocomplete-suggestions div {
+    padding: 8px;
+    color: #FFFFFF;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.autocomplete-suggestions div:hover {
+    background-color: rgba(80, 100, 120, 0.95);
+}
